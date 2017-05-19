@@ -23,6 +23,7 @@ gem 'turbolinks', '~> 5'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier', '>= 1.3.0'
+gem "simple_calendar", "~> 2.0"
 
 group :development, :test do
   gem 'database_cleaner'
