@@ -1,48 +1,57 @@
-require 'test_helper'
+require 'rails_helper'
 
-class LessonsControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @lesson = lessons(:one)
+RSpec.describe LessonsController, :type => :controller do
+  before do
+    @lesson = FactoryGirl.create(:lesson)
   end
 
-  test "should get index" do
-    get lessons_url
-    assert_response :success
+  it "get index" do
+    get :index
+    expect(response.status).to eq 200
   end
 
-  test "should get new" do
-    get new_lesson_url
-    assert_response :success
+  it "get new" do
+    get :new
+    expect(response.status).to eq 200
   end
 
-  test "should create lesson" do
-    assert_difference('Lesson.count') do
-      post lessons_url, params: { lesson: { body: @lesson.body, byline: @lesson.byline, lesson_type: @lesson.lesson_type, links: @lesson.links, questions: @lesson.questions, terms: @lesson.terms, title: @lesson.title, user_id: @lesson.user_id } }
-    end
-
-    assert_redirected_to lesson_url(Lesson.last)
+  it "create lesson" do
+    expect{ post :create, lesson: FactoryGirl.attributes_for(:lesson)
+          }.to change{ Lesson.count }.by(1)
   end
 
-  test "should show lesson" do
-    get lesson_url(@lesson)
-    assert_response :success
+  it "creates lesson and redirects" do
+    post :create,
+      { lesson: FactoryGirl.attributes_for(:lesson) }
+
+    expect(response).to redirect_to(lesson_url(Lesson.last))
   end
 
-  test "should get edit" do
-    get edit_lesson_url(@lesson)
-    assert_response :success
+  it "show lesson" do
+    get :show, id: @lesson.id
+    expect(response.status).to eq 200
   end
 
-  test "should update lesson" do
-    patch lesson_url(@lesson), params: { lesson: { body: @lesson.body, byline: @lesson.byline, lesson_type: @lesson.lesson_type, links: @lesson.links, questions: @lesson.questions, terms: @lesson.terms, title: @lesson.title, user_id: @lesson.user_id } }
-    assert_redirected_to lesson_url(@lesson)
+  it "get edit" do
+    get :edit, id: @lesson.id
+    expect(response.status).to eq 200
   end
 
-  test "should destroy lesson" do
-    assert_difference('Lesson.count', -1) do
-      delete lesson_url(@lesson)
-    end
+  it "update lesson" do
+    patch :update, id: @lesson.id, lesson: FactoryGirl.attributes_for(:lesson)
+    expect(response).to redirect_to(lesson_url(@lesson))
+  end
 
-    assert_redirected_to lessons_url
+  it "destroy lesson" do
+    expect{
+            delete :destroy, id: @lesson.id
+          }.to change{ Lesson.count }.by(-1)
+
+    expect(response).to redirect_to(lessons_url)
+  end
+
+  it "destroy lesson and redirect" do
+    delete :destroy, id: @lesson.id
+    expect(response).to redirect_to(lessons_url)
   end
 end

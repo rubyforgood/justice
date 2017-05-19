@@ -25,12 +25,13 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
-
     respond_to do |format|
       if @lesson.save
+        puts "saved"
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
+        puts "NOPE"
         format.html { render :new }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
@@ -69,6 +70,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:byline, :lesson_type, :terms, :user_id, :title, :body, :links, :questions)
+      params.require(:lesson).permit(:byline, :lesson_type, :user_id, :title, :body, :links, :questions, term_ids: [])
     end
 end
