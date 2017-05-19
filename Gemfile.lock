@@ -97,6 +97,10 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.18)
     formatador (0.2.5)
+    fullcalendar-rails (3.2.0.0)
+      jquery-rails (>= 4.0.5, < 5.0.0)
+      jquery-ui-rails (>= 5.0.2)
+      momentjs-rails (>= 2.9.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     guard (2.14.1)
@@ -154,6 +158,8 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.10.2)
+    momentjs-rails (2.17.1)
+      railties (>= 3.1)
     nenv (0.3.0)
     nio4r (2.0.0)
     nokogiri (1.7.2)
@@ -311,10 +317,12 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   faker
+  fullcalendar-rails
   guard-rspec
   guard-rubocop
   jquery-rails
   listen (~> 3.0.5)
+  momentjs-rails
   pg (~> 0.18)
   pg_search
   pry

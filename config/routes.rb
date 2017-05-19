@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   comfy_route :cms_admin, :path => '/admin'
 
   resources :terms

@@ -7,6 +7,9 @@ end
 
 gem 'rails', '~> 5.0.3'
 
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'pg_search'
