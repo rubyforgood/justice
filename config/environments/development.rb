@@ -51,4 +51,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  
+  # TODO: set :host in environments/production.rb to be the domain of our production app
+  config.action_mailer.default_url_options = { :host => 'justice.dev' }
 end
