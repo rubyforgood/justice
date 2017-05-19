@@ -16,42 +16,42 @@ RSpec.describe LessonsController, :type => :controller do
   end
 
   it "create lesson" do
-    expect{ post :create, lesson: FactoryGirl.attributes_for(:lesson)
+    expect{ post :create, params: { lesson: FactoryGirl.attributes_for(:lesson) }
           }.to change{ Lesson.count }.by(1)
   end
 
   it "creates lesson and redirects" do
     post :create,
-      { lesson: FactoryGirl.attributes_for(:lesson) }
+         params: { lesson: FactoryGirl.attributes_for(:lesson) }
 
     expect(response).to redirect_to(lesson_url(Lesson.last))
   end
 
   it "show lesson" do
-    get :show, id: @lesson.id
+    get :show, params: { id: @lesson.id }
     expect(response.status).to eq 200
   end
 
   it "get edit" do
-    get :edit, id: @lesson.id
+    get :edit, params: { id: @lesson.id }
     expect(response.status).to eq 200
   end
 
   it "update lesson" do
-    patch :update, id: @lesson.id, lesson: FactoryGirl.attributes_for(:lesson)
+    patch :update, params: { id: @lesson.id, lesson: FactoryGirl.attributes_for(:lesson) }
     expect(response).to redirect_to(lesson_url(@lesson))
   end
 
   it "destroy lesson" do
     expect{
-            delete :destroy, id: @lesson.id
+            delete :destroy, params: { id: @lesson.id }
           }.to change{ Lesson.count }.by(-1)
 
     expect(response).to redirect_to(lessons_url)
   end
 
   it "destroy lesson and redirect" do
-    delete :destroy, id: @lesson.id
+    delete :destroy, params: { id: @lesson.id }
     expect(response).to redirect_to(lessons_url)
   end
 end
