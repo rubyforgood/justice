@@ -18,7 +18,19 @@ When you are ready, checkout master, and rebase with the upstreams master
 git checkout master
 git rebase upstream/master
 ```
+
 ***
+
+## Setup Instructions
+
+    $ bundle install
+    $ rake db:migrate
+    $ rails generate comfy:cms
+    $ rake db:migrate
+
+## Using the CMS
+    * Go to justice.dev/admin
+    * Default credentials: 'username'/'password'
 
 ## Our Workflow: (open source style)
 
