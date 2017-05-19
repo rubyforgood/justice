@@ -1,3 +1,14 @@
-<%= month_calendar(attribute: :starts_at) do |date| %>
+<!-- <%= month_calendar(attribute: :start_time, end_attribute: :end_time) do |date| %>
   <%= date %>
+<% end %> -->
+
+
+<%= month_calendar events: @calendar_items do |date, calendar_items| %>
+  <%= date %>
+
+  <% calendar_items.each do |calendar_item| %>
+    <div>
+      <%= calendar_item.title %>
+    </div>
+  <% end %>
 <% end %>

@@ -1,7 +1,7 @@
 class CalendarItem < ApplicationRecord
 
   def start_time
-    created_at
+    self.calendar_item.start
   end
 
 end
