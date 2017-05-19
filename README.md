@@ -6,7 +6,7 @@ Justice for Juniors, sponsored by the Luther Rice Chapel, is dedicated to addres
 Fork this repo
 Clone your repo
 ```bash
-git clone yourrepo
+git clone git clone git@github.com/yourusername/justice.git
 ```
 
 Make sure you set the upstream
