@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Byline:</strong>
+  <%= @lesson.byline %>
+</p>
+
+<p>
+  <strong>Lesson type:</strong>
+  <%= @lesson.lesson_type %>
+</p>
+
+<p>
+  <strong>Terms:</strong>
+  <%= @lesson.terms %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @lesson.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @lesson.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @lesson.body %>
+</p>
+
+<p>
+  <strong>Links:</strong>
+  <%= @lesson.links %>
+</p>
+
+<p>
+  <strong>Questions:</strong>
+  <%= @lesson.questions %>
+</p>
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>
