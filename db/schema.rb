@@ -123,6 +123,18 @@ ActiveRecord::Schema.define(version: 20170519170411) do
     t.datetime "updated_at"
     t.index ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true, using: :btree
     t.index ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position", using: :btree
+
+  create_table "lessons", force: :cascade do |t|
+    t.text     "byline"
+    t.string   "lesson_type"
+    t.text     "terms",       default: [],              array: true
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "body"
+    t.text     "links",       default: [],              array: true
+    t.text     "questions"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end
