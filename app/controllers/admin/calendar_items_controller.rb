@@ -1,4 +1,4 @@
-class CalendarItemsController < ApplicationController
+class Admin::CalenderItemsController < Comfy::Admin::Cms::BaseController
 
   def index
     @calendar_items = CalendarItem.all
@@ -29,13 +29,13 @@ class CalendarItemsController < ApplicationController
   def update
     calendar_item = CalendarItem.find(params[:id])
     calendar_item.update(calendar_item_params)
-    redirect_to calendar_item_path(calendar_item)
+    redirect_to admin_calendar_item_path(calendar_item)
   end
 
   def destroy
     @calendar_item = CalendarItem.find(params[:id])
     @calendar_item.destroy
-    redirect_to calendar_items_path
+    redirect_to admin_calendar_items_path
   end
 
   private
