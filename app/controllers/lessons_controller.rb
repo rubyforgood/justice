@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: %i[show edit update destroy]
+  before_action :set_lesson, only: %i[show edit update destroy download]
 
   # GET /lessons
   # GET /lessons.json
@@ -72,6 +72,13 @@ class LessonsController < ApplicationController
     end
   end
 
+  def download
+    send_data @lesson.document,
+              filename: @lesson.document_file_name,
+              type: @lesson.document_content_type,
+              disposition: 'attachment'
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -81,6 +88,6 @@ class LessonsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def lesson_params
-    params.require(:lesson).permit(:byline, :lesson_type, :user_id, :title, :body, links: [], :questions, :document, term_ids: [])
+    params.require(:lesson).permit(:byline, :lesson_type, :user_id, :title, :body, :questions, :document, term_ids: [], links: [])
   end
 end

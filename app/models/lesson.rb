@@ -14,6 +14,7 @@ class Lesson < ApplicationRecord
   validates_presence_of :body, :lesson_type, :questions, :title
   validates_inclusion_of :lesson_type, in: LESSON_TYPES
   validates_attachment :document,
+                       storage: :database,
                        content_type: {
                           content_type: [
                             "application/pdf",

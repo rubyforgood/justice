@@ -14,6 +14,7 @@ gem 'comfortable_mexican_sofa', '~> 1.12.10'
 gem 'devise'
 gem 'jquery-rails'
 gem "paperclip", "~> 5.1.0"
+gem "paperclip_database", "~> 2.0"
 gem 'pg', '~> 0.18'
 gem 'pg_search'
 gem 'puma', '~> 3.0'
