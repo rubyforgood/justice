@@ -83,8 +83,13 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
     @lesson = Lesson.find(params[:id])
   end
 
+  def make_links_array(links)
+    return unless links
+    links.split(", ")
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def lesson_params
-    params.require(:lesson).permit(:lesson_type, :user_id, :title, :body, :questions, :document, term_ids: [], links: [])
+    params.require(:lesson).permit(:lesson_type, :user_id, :title, :body, :questions, :document, {term_ids: []}, {links: []})
   end
 end

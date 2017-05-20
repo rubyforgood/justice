@@ -22,13 +22,13 @@
       </dd>
     <dt><label for="lesson-terms">Terms</label></dt>
       <dd>
-        <%= f.select :terms, options_from_collection_for_select(Term.all.order(name: :asc), "name", "name", lesson.terms.map(&:name)), {}, {multiple: true} %>
+        <%= f.select :term_ids, options_from_collection_for_select(Term.all.order(name: :asc), "id", "name", lesson.terms.map(&:name)), {}, {multiple: true} %>
       </dd>
   </dl>
   <label for="lesson-body">Body</label>
   <%= f.text_area :body %>
   <label for="lesson-links">Links <em>(One URL per line)</em></label>
-  <%= f.text_area :links %>
+  <%= f.text_area :links, value: lesson.links.join(", ") %>
   <label for="lesson-questions">Questions</label>
   <%= f.text_area :questions %>
   <label for="lesson-document">Document</label>
