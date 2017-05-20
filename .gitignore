@@ -1,8 +1,8 @@
 .rspec
-/log
-/tmp
-/coverage/
-/spec/tmp
+log/
+tmp/
+coverage/
+spec/tmp/
 
 # Ignore pow environment settings
 .powenv
@@ -14,6 +14,6 @@ public/system/comfy
 config/initializers/secret_token.rb
 
 ## Environment normalization:
-/.bundle
-/vendor/bundle
+.bundle
+vendor/bundle
 spec/examples.txt
