@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div id="lesson-listing">
-  <%= button_to new_lesson_path do %>
+  <%= button_to new_admin_lesson_path do %>
     <strong>+</strong> New Lesson
   <% end %>
   <div id="lesson-listing-filter">
     <h2>Filter Lessons</h2>
-    <%= form_tag lessons_path, method: :get, class: 'form-inline language-form' do %>
+    <%= form_tag admin_lessons_path, method: :get, class: 'form-inline language-form' do %>
       <ul>
         <li>
           <h3>By Title</h3>
@@ -38,7 +38,7 @@
 
     <% @lessons.each do |lesson| %>
       <tr>
-        <td> <%= link_to lesson.title, lesson_path(lesson) %> </td>
+        <td> <%= link_to lesson.title, admin_lesson_path(lesson) %> </td>
         <td><%= lesson.lesson_type %></td>
         <td><%= lesson.terms.map(&:name).join(", ") %></td>
         <td><%= lesson.updated_at.strftime("%B %-d, %Y") %></td>
