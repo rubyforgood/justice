@@ -97,6 +97,7 @@ ComfortableMexicanSofa.configure do |config|
   # Default is false.
   #   config.reveal_cms_partials = false
 
+  config.admin_auth = 'CmsDeviseAuth'
 end
 
 # Default credentials for ComfortableMexicanSofa::AccessControl::AdminAuthentication
@@ -131,3 +132,11 @@ ComfortableMexicanSofa::AccessControl::AdminAuthentication.password = 'password'
 #     return true
 #   end
 # end
+
+module CmsDeviseAuth
+  def authenticate
+    unless current_user
+      redirect_to Rails.application.routes.url_helpers.new_user_session_path
+    end
+  end
+end
