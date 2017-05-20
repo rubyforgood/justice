@@ -53,5 +53,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   # TODO: set :host in environments/production.rb to be the domain of our production app
-  config.action_mailer.default_url_options = { :host => 'justice.dev' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
