@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
@@ -24,12 +26,12 @@ group :development, :test do
   gem 'faker'
   gem 'guard-rspec', require: false
   gem 'guard-rubocop'
+  gem 'pry'
   gem 'pry-awesome_print'
   gem 'pry-rails'
-  gem 'pry'
   gem 'rspec-rails'
   gem 'rubocop'
-  gem 'simplecov', :require => false
+  gem 'simplecov', require: false
 end
 
 group :test do

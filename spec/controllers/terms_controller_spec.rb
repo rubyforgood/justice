@@ -1,112 +1,112 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe TermsController, type: :controller do
-
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     FactoryGirl.attributes_for(:term)
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     { name: nil }
-  }
+  end
 
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "returns a success response" do
+  describe 'GET #index' do
+    it 'returns a success response' do
       term = FactoryGirl.create(:term)
       get :index
       expect(response).to be_success
     end
   end
 
-  describe "GET #show" do
-    it "returns a success response" do
+  describe 'GET #show' do
+    it 'returns a success response' do
       term = FactoryGirl.create(:term)
-      get :show, params: {id: term.to_param}
+      get :show, params: { id: term.to_param }
       expect(response).to be_success
     end
   end
 
-  describe "GET #new" do
-    it "returns a success response" do
+  describe 'GET #new' do
+    it 'returns a success response' do
       get :new, params: {}
       expect(response).to be_success
     end
   end
 
-  describe "GET #edit" do
-    it "returns a success response" do
+  describe 'GET #edit' do
+    it 'returns a success response' do
       term = FactoryGirl.create(:term)
-      get :edit, params: {id: term.to_param}
+      get :edit, params: { id: term.to_param }
       expect(response).to be_success
     end
   end
 
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Term" do
-        expect {
-          post :create, params: {term: valid_attributes}
-        }.to change(Term, :count).by(1)
+  describe 'POST #create' do
+    context 'with valid params' do
+      it 'creates a new Term' do
+        expect do
+          post :create, params: { term: valid_attributes }
+        end.to change(Term, :count).by(1)
       end
 
-      it "redirects to the created term" do
-        post :create, params: {term: valid_attributes}
+      it 'redirects to the created term' do
+        post :create, params: { term: valid_attributes }
         expect(response).to redirect_to(Term.last)
       end
     end
 
-    context "with invalid params" do
+    context 'with invalid params' do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {term: invalid_attributes}
+        post :create, params: { term: invalid_attributes }
         expect(response).to be_success
       end
     end
   end
 
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        { name: "RAINBOWS!" }
-      }
-
-      it "updates the requested term" do
-        term = FactoryGirl.create(:term)
-        put :update, params: {id: term.to_param, term: new_attributes}
-        term.reload
-        expect(term.name).to eq("RAINBOWS!")
+  describe 'PUT #update' do
+    context 'with valid params' do
+      let(:new_attributes) do
+        { name: 'RAINBOWS!' }
       end
 
-      it "redirects to the term" do
+      it 'updates the requested term' do
         term = FactoryGirl.create(:term)
-        put :update, params: {id: term.to_param, term: valid_attributes}
+        put :update, params: { id: term.to_param, term: new_attributes }
+        term.reload
+        expect(term.name).to eq('RAINBOWS!')
+      end
+
+      it 'redirects to the term' do
+        term = FactoryGirl.create(:term)
+        put :update, params: { id: term.to_param, term: valid_attributes }
         expect(response).to redirect_to(term)
       end
     end
 
-    context "with invalid params" do
+    context 'with invalid params' do
       it "returns a success response (i.e. to display the 'edit' template)" do
         term = FactoryGirl.create(:term)
-        put :update, params: {id: term.to_param, term: invalid_attributes}
+        put :update, params: { id: term.to_param, term: invalid_attributes }
         expect(response).to be_success
       end
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested term" do
+  describe 'DELETE #destroy' do
+    it 'destroys the requested term' do
       term = FactoryGirl.create(:term)
-      expect {
-        delete :destroy, params: {id: term.to_param}
-      }.to change(Term, :count).by(-1)
+      expect do
+        delete :destroy, params: { id: term.to_param }
+      end.to change(Term, :count).by(-1)
     end
 
-    it "redirects to the terms list" do
+    it 'redirects to the terms list' do
       term = FactoryGirl.create(:term)
-      delete :destroy, params: {id: term.to_param}
+      delete :destroy, params: { id: term.to_param }
       expect(response).to redirect_to(terms_url)
     end
   end
-
 end

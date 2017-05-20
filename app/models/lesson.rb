@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class Lesson < ApplicationRecord
   include PgSearch
 
-  ACTIVITY = "Activity-based"
-  ARTICLE = "Article-based"
-  LESSON_TYPES = [ACTIVITY, ARTICLE]
+  ACTIVITY = 'Activity-based'
+  ARTICLE = 'Article-based'
+  LESSON_TYPES = [ACTIVITY, ARTICLE].freeze
 
   has_many :lesson_terms
   has_many :terms, through: :lesson_terms

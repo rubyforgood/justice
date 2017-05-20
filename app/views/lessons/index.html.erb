@@ -4,16 +4,17 @@
 <div class="col-md-4">
   <%= form_tag lessons_path, method: :get, class: 'form-inline language-form' do %>
     <div class="form-group">
+      <%= label_tag :title %>
       <%= text_field_tag :title, params[:title],
       placeholder: 'Filter by title', type: :search, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= text_field_tag :lesson_type, params[:lesson_type],
-      placeholder: 'Filter by lesson_type', type: :search, class: "form-control" %>
+      <%= label_tag :lesson_type %>
+      <%= select_tag :lesson_type, options_for_select(Lesson::LESSON_TYPES, params[:lesson_type]), include_blank: "Filter by lesson type", type: :search, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= text_field_tag :terms, params[:terms],
-      placeholder: 'Filter by term', type: :search, class: "form-control" %>
+      <%= label_tag :terms %>
+      <%= select_tag :terms, options_from_collection_for_select(Term.all.order(name: :asc), "name", "name", params[:terms]), multiple: true, type: :search, class: "form-control" %>
     </div>
     <%= button_tag(type: "submit", class: "btn btn-primary") do %>
         <span class="glyphicon glyphicon-search" aria-hidden="true">Search</span>
