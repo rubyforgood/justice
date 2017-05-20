@@ -1,14 +1,5 @@
-<!-- <%= month_calendar(attribute: :start_time, end_attribute: :end_time) do |date| %>
+<%= button_to "Create", new_calendar_item_path, :method => "get" %>
+
+<%= month_calendar(attribute: :start_time, end_attribute: :end_time) do |date| %>
   <%= date %>
-<% end %> -->
-
-
-<%= month_calendar events: @calendar_items do |date, calendar_items| %>
-  <%= date %>
-
-  <% calendar_items.each do |calendar_item| %>
-    <div>
-      <%= calendar_item.title %>
-    </div>
-  <% end %>
 <% end %>
