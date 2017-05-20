@@ -142,10 +142,6 @@ header {
 						}
 					}
 
-					&:hover {
-
-					}
-
 					&:hover ul {
 						display: block;
 					}
@@ -253,6 +249,10 @@ article {
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
 	padding: 5px 20px;
 
+	h1 {
+		margin: 20px 0 40px;
+	}
+
 	&#lesson,&#calendaritem {
 		position: static;
 		background: none;
@@ -284,6 +284,44 @@ article {
 
 			dd {
 				margin-bottom: 5px;
+
+				input,select {
+					width: 300px;
+					font-size: 14px;
+					padding: 2px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		label {
+			font-weight: 500;
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		textarea {
+			display: block;
+			width: 600px;
+			min-height: 250px;
+			font-size: 14px;
+			line-height: 20px;
+			padding: 6px;
+			margin-bottom: 40px;
+		}
+
+		input[type="submit"] {
+			width: auto;
+			background: #4990E2;
+			color: white;
+			font-size: 12px;
+			font-weight: 500;
+			border: 1px solid #2868B3;
+			padding: 6px 12px;
+			cursor: pointer;
+
+			&:hover {
+				opacity: 0.8;
 			}
 		}
 
