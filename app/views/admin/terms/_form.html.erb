@@ -1,4 +1,4 @@
-<%= form_for(term) do |f| %>
+<%= form_for([:admin, term]) do |f| %>
   <% if term.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(term.errors.count, "error") %> prohibited this term from being saved:</h2>

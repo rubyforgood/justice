@@ -2,7 +2,7 @@
 
 <h1>Lessons</h1>
 <div class="col-md-4">
-  <%= form_tag lessons_path, method: :get, class: 'form-inline language-form' do %>
+  <%= form_tag admin_lessons_path, method: :get, class: 'form-inline language-form' do %>
     <div class="form-group">
       <%= label_tag :title %>
       <%= text_field_tag :title, params[:title],
@@ -48,9 +48,9 @@
         <td><%= lesson.body %></td>
         <td><%= lesson.links %></td>
         <td><%= lesson.questions %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [:admin, lesson] %></td>
+        <td><%= link_to 'Edit', edit_admin_lesson_path(lesson) %></td>
+        <td><%= link_to 'Destroy', [:admin, lesson], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -58,4 +58,4 @@
 
 <br>
 
-<%= link_to 'New Lesson', new_lesson_path %>
+<%= link_to 'New Lesson', new_admin_lesson_path %>

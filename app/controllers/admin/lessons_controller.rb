@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class LessonsController < ApplicationController
+class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   before_action :set_lesson, only: %i[show edit update destroy download]
 
   # GET /lessons
@@ -39,7 +39,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
+        format.html { redirect_to [:admin, @lesson], notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new }
@@ -53,7 +53,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
+        format.html { redirect_to [:admin, @lesson], notice: 'Lesson was successfully updated.' }
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit }
