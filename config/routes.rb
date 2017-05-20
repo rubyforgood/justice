@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     resources :terms
   end
 
+  resources :users
   devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Make sure this routeset is defined last
