@@ -3,11 +3,13 @@
 Rails.application.routes.draw do
   comfy_route :cms_admin, path: '/admin'
 
-  resources :terms
-  resources :lessons do
-    member do
-      get :download
+  namespace :admin do
+    resources :lessons do
+      member do
+        get :download
+      end
     end
+    resources :terms
   end
 
   devise_for :users

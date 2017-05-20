@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TermsController < ApplicationController
+class Admin::TermsController < Comfy::Admin::Cms::BaseController
   before_action :set_term, only: %i[show edit update destroy]
 
   # GET /terms
@@ -24,7 +24,7 @@ class TermsController < ApplicationController
     @term = Term.new(term_params)
 
     if @term.save
-      redirect_to @term, notice: 'Term was successfully created.'
+      redirect_to [:admin, @term], notice: 'Term was successfully created.'
     else
       render :new
     end

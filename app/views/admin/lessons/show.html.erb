@@ -41,8 +41,8 @@
 </p>
 
 <p>
-  <%= link_to 'Download', download_lesson_path(@lesson), disable_with: 'Downloading...' %>
+  <%= link_to 'Download', admin_download_lesson_path(@lesson), disable_with: 'Downloading...' %>
 </p>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+<%= link_to 'Edit', edit_admin_lesson_path(@lesson) %> |
+<%= link_to 'Back', admin_lessons_path %>
