@@ -9,6 +9,7 @@ gem 'rails', '~> 5.0.3'
 
 gem 'bootsnap'
 gem 'comfortable_mexican_sofa', '~> 1.12.10'
+gem 'devise'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'pg_search'
