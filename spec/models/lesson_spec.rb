@@ -10,6 +10,7 @@ RSpec.describe Lesson, type: :model do
 
   it { should have_many(:terms).through(:lesson_terms) }
   it { should have_many(:lesson_terms) }
+  it { should belong_to(:user) }
 
   it do
     should validate_inclusion_of(:lesson_type)

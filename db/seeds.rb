@@ -14,7 +14,6 @@ end
 
 20.times do
   lesson = Lesson.create(
-    byline: Faker::Company.bs,
     lesson_type: Lesson::LESSON_TYPES.sample,
     title: Faker::Book.title,
     body:  Faker::Hipster.paragraph,
