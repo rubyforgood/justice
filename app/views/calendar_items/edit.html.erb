@@ -1,10 +1,9 @@
-<%= form_for @calendar_item do |f| %>
-<ul>
+<%= form_for(@calendar_item) do |f| %>
+  <ul>
     <li>
       <%= f.label :title %>
       <%= f.text_field :title %>
     </li>
-
     <li>
       <%= f.label :body %>
       <%= f.text_field :body %>
@@ -20,6 +19,5 @@
       <%= f.text_field :end_time %>
     </li>
   </ul>
-
   <%= f.submit %>
 <% end %>
