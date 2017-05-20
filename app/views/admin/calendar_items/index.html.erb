@@ -4,7 +4,7 @@
   <%= date.day %>
   <% calendar_items.each do |item| %>
     <div>
-      <%= link_to item.title, 'Item' %>
+      <%= link_to item.title, [:admin, item] %>
     </div>
   <% end %>
 <% end %>

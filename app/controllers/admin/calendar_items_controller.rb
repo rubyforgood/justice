@@ -11,7 +11,7 @@ class Admin::CalendarItemsController < Comfy::Admin::Cms::BaseController
   def create
     @calendar_item = CalendarItem.new(calendar_item_params)
     if @calendar_item.save
-      redirect_to @calendar_item
+      redirect_to [:admin, @calendar_item]
     else
       render :new
     end
