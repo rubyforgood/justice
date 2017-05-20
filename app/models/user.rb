@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_many :lessons
 
   def full_name
-    first_name + " " + last_name
+    if first_name && last_name
+      first_name + " " + last_name
+    else
+      "Unknown Name for User ID: #{id}"
+    end
   end
 end

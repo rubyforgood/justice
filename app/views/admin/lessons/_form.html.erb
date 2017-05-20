@@ -11,47 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :lesson_type %>
-    <%= f.text_field :lesson_type %>
-  </div>
-
-  <div class="field">
-    <%= f.label :terms %>
-    <%= f.text_field :terms %>
-  </div>
-
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= f.label :links %>
-    <%= f.text_field :links %>
-  </div>
-
-  <div class="field">
-    <%= f.label :questions %>
-    <%= f.text_area :questions %>
-  </div>
-
-  <div class="field">
-    <%= f.label :document %>
-    <%= f.file_field :document %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <dl id="meta-top">
+    <dt><label for="lesson-title">Title</label></dt>
+      <dd>
+        <%= f.text_field :title %>
+      </dd>
+    <dt><label for="lesson-type">Type</label></dt>
+      <dd>
+        <%= f.select :lesson_type, options_for_select(Lesson::LESSON_TYPES, lesson.lesson_type), include_blank: "Choose a lesson type" %>
+      </dd>
+    <dt><label for="lesson-terms">Terms</label></dt>
+      <dd>
+        <%= f.select :terms, options_from_collection_for_select(Term.all.order(name: :asc), "name", "name", lesson.terms.map(&:name)), {}, {multiple: true} %>
+      </dd>
+  </dl>
+  <label for="lesson-body">Body</label>
+  <%= f.text_area :body %>
+  <label for="lesson-links">Links <em>(One URL per line)</em></label>
+  <%= f.text_area :links %>
+  <label for="lesson-questions">Questions</label>
+  <%= f.text_area :questions %>
+  <label for="lesson-document">Document</label>
+  <%= f.file_field :document %>
+  <% if form_type == "new" %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  <% end %>
+  <%= f.submit "Save Lesson"%>
 <% end %>

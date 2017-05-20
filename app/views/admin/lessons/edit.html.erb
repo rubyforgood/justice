@@ -1,6 +1,8 @@
-<h1>Editing Lesson</h1>
+<article id="lesson">
+  <h1>Edit Lesson</h1>
 
-<%= render 'form', lesson: @lesson %>
+  <%= render 'form', lesson: @lesson, form_type: 'new' %>
 
-<%= link_to 'Show', [:admin, @lesson] %> |
-<%= link_to 'Back', admin_lessons_path %>
+  <%= link_to 'Show', [:admin, @lesson] %> |
+  <%= link_to 'Back', admin_lessons_path %>
+</article>
