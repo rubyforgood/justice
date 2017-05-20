@@ -85,6 +85,7 @@ header {
 				font-size: 12px;
 				line-height: 24px;
 				padding: 0 10px;
+				margin: 0;
 			}
 			#search-box-submit {
 				width: 35px;
@@ -211,13 +212,17 @@ article {
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
 	padding: 5px 20px;
 
-	&#lesson {
+	&#lesson,&#calendaritem {
 		position: static;
 		background: none;
 		border: none;
 		box-shadow: none;
 		margin: 40px 0;
 		padding: none;
+
+		#back-to-cal {
+			margin: 0 0 20px 0;
+		}
 
 		aside {
 			float: none;
