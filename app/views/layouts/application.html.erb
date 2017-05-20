@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Justice</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Justice for Juniors</title>
+    <meta name="description" content="">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +12,31 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="container">
+      <header>
+        <a href="/" id="logo">Home</a>
+        <div id="nav-block">
+          <ul id="social">
+            <li><a href="#" id="social-youtube" title="YouTube">YouTube</a></li>
+            <li><a href="#" id="social-twitter" title="Twitter">Twitter</a></li>
+            <li><a href="#" id="social-facebook" title="Facebook">Facebook</a></li>
+          </ul>
+          <div id="search-box">
+            <input type="text" placeholder="Search Justice for Juniors" id="search-box-field" />
+            <input type="submit" id="search-box-submit"
+          </div>
+          <nav>
+            <a href="#">Section A</a>
+            <a href="#">Section B</a>
+            <a href="#">Section C</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+          </nav>
+        </div>
+      </header>
+      <div class="clear"></div>
+      <%= yield %>
+      <footer></footer>
+    </div>
   </body>
 </html>
