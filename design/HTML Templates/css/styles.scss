@@ -211,6 +211,53 @@ article {
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
 	padding: 5px 20px;
 
+	&#lesson {
+		position: static;
+		background: none;
+		border: none;
+		box-shadow: none;
+		margin: 40px 0;
+		padding: none;
+
+		aside {
+			float: none;
+			text-align: right;
+			margin-bottom: 10px;
+		}
+
+		dl {
+			margin: 0;
+			padding: 0;
+
+			dt {
+				font-weight: 500;
+				float: left;
+				clear: left;
+				width: 75px;
+			}
+
+			dd {
+				margin-bottom: 5px;
+			}
+		}
+
+		dl#meta-bot {
+			dt {
+				float: none;
+				width: auto;
+			}
+
+			dd {
+				margin-bottom: 20px;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
 	h1 {
 		font-size: 20px;
 		font-weight: 500;
