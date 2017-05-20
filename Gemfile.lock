@@ -178,6 +178,8 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    paperclip_database (2.3.1)
+      paperclip (>= 2.3.0)
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.20.0)
@@ -333,6 +335,8 @@ DEPENDENCIES
   guard-rubocop
   jquery-rails
   listen (~> 3.0.5)
+  paperclip (~> 5.1.0)
+  paperclip_database (~> 2.0)
   pg (~> 0.18)
   pg_search
   pry
