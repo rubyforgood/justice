@@ -333,6 +333,7 @@ DEPENDENCIES
   guard-rubocop
   jquery-rails
   listen (~> 3.0.5)
+  paperclip (~> 5.1.0)
   pg (~> 0.18)
   pg_search
   pry

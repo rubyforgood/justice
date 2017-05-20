@@ -3,3 +3,4 @@ tmp/
 .powenv
 .powder
 public/system/comfy
+spec/examples.txt
