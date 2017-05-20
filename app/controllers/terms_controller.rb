@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class TermsController < ApplicationController
-  before_action :set_term, only: [:show, :edit, :update, :destroy]
+  before_action :set_term, only: %i[show edit update destroy]
 
   # GET /terms
   def index
@@ -7,8 +9,7 @@ class TermsController < ApplicationController
   end
 
   # GET /terms/1
-  def show
-  end
+  def show; end
 
   # GET /terms/new
   def new
@@ -16,8 +17,7 @@ class TermsController < ApplicationController
   end
 
   # GET /terms/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /terms
   def create
@@ -46,13 +46,14 @@ class TermsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_term
-      @term = Term.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def term_params
-      params.require(:term).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_term
+    @term = Term.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def term_params
+    params.require(:term).permit(:name)
+  end
 end
