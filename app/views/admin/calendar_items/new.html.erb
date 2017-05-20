@@ -1,4 +1,4 @@
-<%= form_for [:admin, @calendar_item] do |f| %>
+<%= form_for @calendar_item do |f| %>
 <ul>
     <li>
       <%= f.label :title %>
@@ -7,14 +7,19 @@
 
     <li>
       <%= f.label :body %>
-      <%= f.text_area :body %>
+      <%= f.text_field :body %>
     </li>
 
     <li>
       <%= f.label :start_time %>
       <%= f.text_field :start_time %>
     </li>
+
+    <li>
+      <%= f.label :end_time %>
+      <%= f.text_field :end_time %>
+    </li>
   </ul>
 
-  <%= f.submit "Create Calendar", class: "btn btn-primary" %>
+  <%= f.submit %>
 <% end %>

@@ -1,16 +1,23 @@
-<article id="calendar-edit">
-   <h1>Edit Event</h1>
-   <dl id="meta-top">
+<%= form_for(@calendar_item) do |f| %>
+  <ul>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+    <li>
+      <%= f.label :body %>
+      <%= f.text_field :body %>
+    </li>
 
-     <%= form_for([:admin, @calendar_item]) do |f| %>
-           <dt><%= f.label :title %></dt>
-           <dd><%= f.text_field :title %></dd>
+    <li>
+      <%= f.label :start_time %>
+      <%= f.text_field :start_time %>
+    </li>
 
-            <dt><%= f.label :body %></dt>
-            <dd><%= f.text_area :body %></dd>
-
-           <dt><%= f.label :start_time %></dt>
-           <dd id="lesson-date" name ="lesson-date"><%= f.text_field :start_time %></dd>
-       <%= f.submit "Update Calendar", class: " btn btn-primary", style: "margin-top: 10px" %>
-     <% end %>
- </article>
+    <li>
+      <%= f.label :end_time %>
+      <%= f.text_field :end_time %>
+    </li>
+  </ul>
+  <%= f.submit %>
+<% end %>

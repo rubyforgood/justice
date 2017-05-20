@@ -1,16 +1,23 @@
-<div id="calendar">
-  <div id="calendar-controls">
-    <%= button_to("Create New", new_admin_calendar_item_path, :method => "get", class:"btn btn-primary", style:"margin-bottom: 10px")%>
-  </div>
+<%= button_to "Create", new_admin_calendar_item_path, :method => "get" %>
 
-  <table id="calendar-month">
-    <%= month_calendar events: @calendar_items do |date, calendar_items| %>
-      <%= date.day %>
-      <% calendar_items.each do |item| %>
-        <div>
-          <%= link_to item.title, [:admin, item] %>
-        </div>
-      <% end %>
-    <% end %>
-  </table>
-</div>
+<%= month_calendar events: @calendar_items do |date, calendar_items| %>
+  <%= date.day %>
+  <% calendar_items.each do |item| %>
+    <div>
+      <%= link_to item.title, 'Item' %>
+    </div>
+  <% end %>
+<% end %>
+
+<% @calendar_items.each do |item| %>
+  <ul>
+    <li>Title</li>
+    <dd><%= item.title %></dd>
+
+    <li>Start Date</li>
+    <dd><%= item.start_time %></dd>
+
+    <li>End Date</li>
+    <dd><%= item.end_time %></dd>
+  </ul>
+<% end %>
