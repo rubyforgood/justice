@@ -1,4 +1,5 @@
 class Term < ApplicationRecord
-  has_and_belongs_to_many :lessons
+  has_many :lesson_terms
+  has_many :lessons, through: :lesson_terms
   validates_presence_of :name
 end

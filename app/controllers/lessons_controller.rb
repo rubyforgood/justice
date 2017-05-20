@@ -5,6 +5,18 @@ class LessonsController < ApplicationController
   # GET /lessons.json
   def index
     @lessons = Lesson.all
+
+    if params[:title].present?
+      @lessons = @lessons.search_by_title(params[:title])
+    end
+
+    if params[:lesson_type].present?
+      @lessons = @lessons.where(lesson_type: params[:lesson_type])
+    end
+
+    if params[:terms].present?
+      @lessons = @lessons.joins(:terms).where('terms.name in (?)', [params[:terms]])
+    end
   end
 
   # GET /lessons/1

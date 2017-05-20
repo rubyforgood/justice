@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519183526) do
+ActiveRecord::Schema.define(version: 20170520135607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,13 @@ ActiveRecord::Schema.define(version: 20170519183526) do
     t.index ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position", using: :btree
   end
 
+  create_table "lesson_terms", id: false, force: :cascade do |t|
+    t.integer "lesson_id"
+    t.integer "term_id"
+    t.index ["lesson_id"], name: "index_lesson_terms_on_lesson_id", using: :btree
+    t.index ["term_id"], name: "index_lesson_terms_on_term_id", using: :btree
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.text     "byline"
     t.string   "lesson_type"
@@ -135,13 +142,6 @@ ActiveRecord::Schema.define(version: 20170519183526) do
     t.text     "questions"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-  end
-
-  create_table "lessons_terms", id: false, force: :cascade do |t|
-    t.integer "lesson_id"
-    t.integer "term_id"
-    t.index ["lesson_id"], name: "index_lessons_terms_on_lesson_id", using: :btree
-    t.index ["term_id"], name: "index_lessons_terms_on_term_id", using: :btree
   end
 
   create_table "terms", force: :cascade do |t|
