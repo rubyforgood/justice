@@ -221,6 +221,8 @@ article {
       padding: 10px 20px; }
       #lesson-listing #lesson-listing-table th:last-child, #lesson-listing #lesson-listing-table td:last-child {
         border-right: none; }
+    #lesson-listing #lesson-listing-table td {
+      vertical-align: top; }
     #lesson-listing #lesson-listing-table #lesson-name {
       width: 300px; }
 
