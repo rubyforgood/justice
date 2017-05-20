@@ -184,6 +184,8 @@ article {
   border: 2px solid white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   padding: 5px 20px; }
+  article h1 {
+    margin: 20px 0 40px; }
   article#lesson, article#calendaritem {
     position: static;
     background: none;
@@ -207,6 +209,34 @@ article {
         width: 75px; }
       article#lesson dl dd, article#calendaritem dl dd {
         margin-bottom: 5px; }
+        article#lesson dl dd input, article#lesson dl dd select, article#calendaritem dl dd input, article#calendaritem dl dd select {
+          width: 300px;
+          font-size: 14px;
+          padding: 2px;
+          margin-bottom: 20px; }
+    article#lesson label, article#calendaritem label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px; }
+    article#lesson textarea, article#calendaritem textarea {
+      display: block;
+      width: 600px;
+      min-height: 250px;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 6px;
+      margin-bottom: 40px; }
+    article#lesson input[type="submit"], article#calendaritem input[type="submit"] {
+      width: auto;
+      background: #4990E2;
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid #2868B3;
+      padding: 6px 12px;
+      cursor: pointer; }
+      article#lesson input[type="submit"]:hover, article#calendaritem input[type="submit"]:hover {
+        opacity: 0.8; }
     article#lesson dl#meta-bot dt, article#calendaritem dl#meta-bot dt {
       float: none;
       width: auto; }
