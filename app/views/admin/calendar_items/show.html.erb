@@ -12,6 +12,6 @@
   <dd><%= @calendar_item.end_time %></dd>
 </ul>
 
-<%= link_to("Edit Event", edit_calendar_item_path(@calendar_item), class: "button") %>
+<%= link_to("Edit Event", edit_admin_calendar_item_path(@calendar_item), class: "button") %>
 
-<%= button_to("Delete Event", calendar_item_path(@calendar_item), method: :delete, class: "button danger") %>
+<%= button_to("Delete Event", admin_calendar_item_path(@calendar_item), method: :delete, class: "button danger") %>

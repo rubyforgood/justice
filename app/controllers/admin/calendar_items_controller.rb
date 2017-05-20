@@ -1,4 +1,4 @@
-class Admin::CalenderItemsController < Comfy::Admin::Cms::BaseController
+class Admin::CalendarItemsController < Comfy::Admin::Cms::BaseController
 
   def index
     @calendar_items = CalendarItem.all
