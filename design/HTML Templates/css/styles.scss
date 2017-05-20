@@ -131,6 +131,30 @@ header {
 	}
 }
 
+.image-lockup-xlarge {
+	margin: 30px -4px 0 -4px;
+	position: relative;
+	width: 983px;
+	height: 371px;
+	border: 4px solid #F1F1F1;
+	overflow: hidden;
+
+	.caption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,0.4);
+		width: 490px;
+		padding: 10px 20px;
+		color: white;
+
+		a {
+			font-weight: bold;
+			color: white;
+		}
+	}
+}
+
 .image-lockup-large {
 	position: relative;
 	width: 640px;
@@ -173,6 +197,32 @@ header {
 		a {
 			font-weight: bold;
 			color: white;
+		}
+	}
+}
+
+article {
+	width: 900px;
+	position: relative;
+	top: -45px;
+	margin: 0 auto;
+	background: #F1F1F1;
+	border: 2px solid white;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+	padding: 5px 20px;
+
+	h1 {
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	aside {
+		float: right;
+		margin: 20px 0 10px 40px;
+
+		.image-lockup-small {
+			border-color: #E1E1E1;
+			margin-bottom: 12px;
 		}
 	}
 }
