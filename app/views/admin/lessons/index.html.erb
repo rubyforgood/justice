@@ -1,61 +1,51 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Lessons</h1>
-<div class="col-md-4">
-  <%= form_tag admin_lessons_path, method: :get, class: 'form-inline language-form' do %>
-    <div class="form-group">
-      <%= label_tag :title %>
-      <%= text_field_tag :title, params[:title],
-      placeholder: 'Filter by title', type: :search, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= label_tag :lesson_type %>
-      <%= select_tag :lesson_type, options_for_select(Lesson::LESSON_TYPES, params[:lesson_type]), include_blank: "Filter by lesson type", type: :search, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= label_tag :terms %>
-      <%= select_tag :terms, options_from_collection_for_select(Term.all.order(name: :asc), "name", "name", params[:terms]), multiple: true, type: :search, class: "form-control" %>
-    </div>
-    <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-        <span class="glyphicon glyphicon-search" aria-hidden="true">Search</span>
-    <% end %>
+<div class="clear"></div>
+<div id="lesson-listing">
+  <%= button_to new_lesson_path do %>
+    <strong>+</strong> New Lesson
   <% end %>
-</div>
+  <div id="lesson-listing-filter">
+    <h2>Filter Lessons</h2>
+    <%= form_tag lessons_path, method: :get, class: 'form-inline language-form' do %>
+      <ul>
+        <li>
+          <h3>By Title</h3>
+          <%= text_field_tag :title, params[:title],
+          placeholder: 'Filter by title', type: :search, class: "form-control" %>
+        </li>
+        <li>
+          <h3>By Type</h3>
+          <%= select_tag :lesson_type, options_for_select(Lesson::LESSON_TYPES, params[:lesson_type]), include_blank: "Filter by lesson type", type: :search, class: "form-control" %>
+        </li>
+        <li>
+          <h3>By Term</h3>
+          <!-- TODO: Change multiselect so user doesn't need to press Command button. -->
+          <%= select_tag :terms, options_from_collection_for_select(Term.all.order(name: :asc), "name", "name", params[:terms]), multiple: true, type: :search, class: "form-control" %>
+        </li>
+        <li>
+          <input type="submit" value="Apply Filters"></input>
+        </li>
+      </ul>
+    <% end %>
+  </div>
 
-<table>
-  <thead>
+  <table cols="4" id="lesson-listing-table">
     <tr>
-      <th>Byline</th>
-      <th>Lesson type</th>
-      <th>Terms</th>
-      <th>User</th>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Links</th>
-      <th>Questions</th>
-      <th colspan="3"></th>
+      <th id="lesson-name">Lesson Name</th>
+      <th id="article">Type</th>
+      <th id="terms">Terms</th>
+      <th id="updated">Updated</th>
     </tr>
-  </thead>
 
-  <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.byline %></td>
+        <td> <%= link_to lesson.title, lesson_path(lesson) %> </td>
         <td><%= lesson.lesson_type %></td>
-        <td><%= lesson.terms.map(&:name) %></td>
-        <td><%= lesson.user_id %></td>
-        <td><%= lesson.title %></td>
-        <td><%= lesson.body %></td>
-        <td><%= lesson.links %></td>
-        <td><%= lesson.questions %></td>
-        <td><%= link_to 'Show', [:admin, lesson] %></td>
-        <td><%= link_to 'Edit', edit_admin_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', [:admin, lesson], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= lesson.terms.map(&:name).join(", ") %></td>
+        <td><%= lesson.updated_at.strftime("%B %-d, %Y") %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+  </table>
+</div>
 
 <br>
-
-<%= link_to 'New Lesson', new_admin_lesson_path %>
