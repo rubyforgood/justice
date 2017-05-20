@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   comfy_route :cms, path: '/', sitemap: false
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :calendar_items
 end
