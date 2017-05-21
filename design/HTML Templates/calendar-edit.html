@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Justice for Good</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+			<div id="container">
+	    	<header>
+					<a href="/" id="logo">Home</a>
+					<div id="nav-block">
+            <ul class="social">
+							<li><a href="#" class="social-youtube" title="YouTube">YouTube</a></li>
+							<li><a href="#" class="social-twitter" title="Twitter">Twitter</a></li>
+							<li><a href="#" class="social-facebook" title="Facebook">Facebook</a></li>
+						</ul>
+						<div id="search-box">
+							<input type="text" placeholder="Search Justice for Juniors" id="search-box-field" />
+							<input type="submit" id="search-box-submit"
+						</div>
+            <nav>
+              <ul>
+                <li>
+                  <a href="#">Section A</a>
+                  <ul>
+                    <li><a href="#">Section A1</a></li>
+                    <li><a href="#">Section A2</a></li>
+                    <li><a href="#">Section A3</a></li>
+                    <li><a href="#">Section A4</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Section B</a>
+                </li>
+                <li>
+                  <a href="#">Section C</a>
+                  <ul>
+                    <li><a href="#">Section C1</a></li>
+                    <li><a href="#">Section C2</a></li>
+                  </ul>
+                </li>
+              </ul>
+						</nav>
+					</div>
+				</header>
+				<div class="clear"></div>
+
+        <article id="calendar-edit">
+          <link rel="stylesheet" href="js/pikaday/css/pikaday.css">
+          <h1>Edit Event</h1>
+          <dl id="meta-top">
+            <dt><label for="calendar-title">Event Title</label></dt>
+              <dd>
+                <input type="text" name="calendar-title" />
+              </dd>
+            <dt><label for="calendar-body">Body</label></dt>
+              <dd><textarea id="calendar-body" name="calendar-body"></textarea></dd>
+            <dt><label for="lesson-date">Start Time</label></dt>
+              <dd>
+                <input type="text" id="lesson-date" name ="lesson-date" />
+              </dd>
+          </dl>
+          <input type="submit" value="Save Event"></input>
+          <script src="./js/pikaday/moment.js"></script>
+          <script src="./js/pikaday/pikaday.js"></script>
+          <script>
+              var picker = new Pikaday({
+                field: document.getElementById('lesson-date'),
+                format: 'MM-DD-YYYY HH:mm',
+                incrementMinuteBy: 15
+               });
+          </script>
+        </article>
+        <footer>
+          <div>
+            <a href="#">Site Map</a>
+            <a href="#">Feedback</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <ul class="social">
+							<li><a href="#" class="social-youtube" title="YouTube">YouTube</a></li>
+							<li><a href="#" class="social-twitter" title="Twitter">Twitter</a></li>
+							<li><a href="#" class="social-facebook" title="Facebook">Facebook</a></li>
+						</ul>
+          </div>
+          <p>©2017 by Justice for Juniors. All rights reserved.</p>
+        </footer>
+			</div>
+    </body>
+</html>
