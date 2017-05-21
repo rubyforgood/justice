@@ -23,24 +23,30 @@
 <article>
 <aside>
 <!-- Optional sidebar for content; remove aside block to hide -->
-<p class="image-lockup-small">
-  <img src="assets/placeholder-5.png">
-  <span class="caption">
-  </span>
-</p>
-<p>Et voluptatem facere non animi explicabo voluptas.
-</p>
-<p><a href="#">Action link is here</a>
-</p>
-<p class="image-lockup-small">
-  <img src="assets/placeholder-6.png">
-  <span class="caption">
-  </span>
-</p>
-<p>Et voluptatem facere non animi explicabo voluptas.
-</p>
-<p><a href="#">Action link is here</a>
-</p>
+<% if cms_block_content(:image1_caption).present? %>
+  <p class="image-lockup-small">
+    <img src="<%= cms_block_content(:image1_url) %>">
+    <span class="caption">
+      <%= cms_block_content(:image1_caption) %>
+    </span>
+  </p>
+  <p>Et voluptatem facere non animi explicabo voluptas.
+  </p>
+  <p><a href="#">Action link is here</a></p>
+<% end %>
+
+<% if cms_block_content(:image2_caption).present? %>
+  <p class="image-lockup-small">
+    <img src="<%= cms_block_content(:image2_url) %>">
+    <span class="caption">
+      <%= cms_block_content(:image2_caption) %>
+    </span>
+  </p>
+  <p>Et voluptatem facere non animi explicabo voluptas.
+  </p>
+  <p><a href="#">Action link is here</a></p>
+<% end %>
+
 </aside>
 <!-- End optional sidebar for content -->
 <h1><%=  @cms_page.label %></h1>
