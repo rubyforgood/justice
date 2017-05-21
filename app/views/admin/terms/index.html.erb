@@ -1,27 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div id="lesson-listing">
+  <% if current_user.admin? || current_user.super_user? %>
+    <%= button_to new_admin_term_path do %>
+      <strong>+</strong> New Term
+    <% end %>
+  <% end %>
 
-<h1>Terms</h1>
-
-<table>
-  <thead>
+  <table cols="4" id="lesson-listing-table">
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th id="term-name">Term</th>
     </tr>
-  </thead>
-
-  <tbody>
     <% @terms.each do |term| %>
       <tr>
-        <td><%= term.name %></td>
-        <td><%= link_to 'Show', [:admin, term] %></td>
-        <td><%= link_to 'Edit', edit_admin_term_path(term) %></td>
-        <td><%= link_to 'Destroy', [:admin, term], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%= term.name%> </td>
+        <% if current_user.admin? || current_user.super_user? %>
+          <td><%= link_to 'Edit', edit_admin_term_path(term) %></td>
+        <% end %>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Term', new_admin_term_path %>
+  </table>
+</div>

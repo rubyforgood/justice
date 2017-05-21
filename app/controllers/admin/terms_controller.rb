@@ -21,21 +21,31 @@ class Admin::TermsController < Comfy::Admin::Cms::BaseController
 
   # POST /terms
   def create
-    @term = Term.new(term_params)
+    if current_user.admin? || current_user.super_user?
+      @term = Term.new(term_params)
 
-    if @term.save
-      redirect_to [:admin, @term], notice: 'Term was successfully created.'
+      if @term.save
+        redirect_to [:admin, @term], notice: 'Term was successfully created.'
+      else
+        render :new, notice: "Term could not be created due to the following error(s): " +
+                             "#{@term.errors.full_messages.join(". ")}"
+      end
     else
-      render :new
+      render :index, notice: 'Only admins can create a term.'
     end
   end
 
   # PATCH/PUT /terms/1
   def update
-    if @term.update(term_params)
-      redirect_to @term, notice: 'Term was successfully updated.'
+    if current_user.admin? || current_user.super_user?
+      if @term.update(term_params)
+        redirect_to @term, notice: 'Term was successfully updated.'
+      else
+        render :edit, notice: "Term could not be updated due to the following error(s): " +
+                             "#{@term.errors.full_messages.join(". ")}"
+      end
     else
-      render :edit
+      render :index, notice: 'Only admins can create a term.'
     end
   end
 

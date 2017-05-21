@@ -44,5 +44,7 @@
   <%= link_to 'Download', admin_download_lesson_path(@lesson), disable_with: 'Downloading...' %>
 </p>
 
+<% if (@lesson.user == current_user) || current_user.admin? || current_user.super_user? %>
 <%= link_to 'Edit', edit_admin_lesson_path(@lesson) %> |
+<% end %>
 <%= link_to 'Back', admin_lessons_path %>
