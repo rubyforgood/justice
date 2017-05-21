@@ -30,12 +30,16 @@
   </dl>
   <label for="lesson-body">Body</label>
   <%= f.text_area :body %>
+  <br/>
   <label for="lesson-links">Links <em>(One URL per line)</em></label>
   <%= f.text_area :links, value: lesson.links.join(", ") %>
+  <br/>
   <label for="lesson-questions">Questions</label>
   <%= f.text_area :questions %>
+  <br/>
   <label for="lesson-document">Document</label>
   <%= f.file_field :document %>
+  <br/>
   <% if form_type == "new" %>
     <%= f.hidden_field :user_id, value: current_user.id %>
   <% end %>

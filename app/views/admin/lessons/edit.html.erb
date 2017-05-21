@@ -2,7 +2,9 @@
   <h1>Edit Lesson</h1>
 
   <%= render 'form', lesson: @lesson, form_type: 'new' %>
-
-  <%= link_to 'Show', [:admin, @lesson] %> |
-  <%= link_to 'Back', admin_lessons_path %>
+  <br/>
+  <aside>
+    <%= link_to '<button>Show</button>'.html_safe, [:admin, @lesson] %>
+    <%= link_to '<button>Back</button>'.html_safe, admin_lessons_path %>
+  </aside>
 </article>

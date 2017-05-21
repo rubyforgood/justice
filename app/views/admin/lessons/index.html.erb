@@ -1,8 +1,5 @@
-<p id="notice"><%= notice %></p>
 <div id="lesson-listing">
-  <%= button_to new_admin_lesson_path do %>
-    <strong>+</strong> New Lesson
-  <% end %>
+  <%= link_to '<button><strong>+</strong> New Lesson</button>'.html_safe, new_admin_lesson_path %>
   <div id="lesson-listing-filter">
     <h2>Filter Lessons</h2>
     <%= form_tag admin_lessons_path, method: :get, class: 'form-inline language-form' do %>

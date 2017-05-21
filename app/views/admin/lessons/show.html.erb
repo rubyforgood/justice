@@ -31,7 +31,9 @@
       <dd>
         <%= @lesson.questions %>
       </dd>
-    <dt><%= link_to 'Download', download_admin_lesson_path(@lesson), disable_with: 'Downloading...' %></dt>
+    <% if @lesson.document.exists? %>
+      <dt><%= link_to 'Download', download_admin_lesson_path(@lesson), disable_with: 'Downloading...' %></dt>
+    <% end %>
   </dl>
   <aside>
     <%= link_to '<button>Edit</button>'.html_safe, edit_admin_lesson_path(@lesson) %>
