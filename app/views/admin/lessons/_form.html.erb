@@ -23,8 +23,8 @@
     <dt><label for="lesson-terms">Terms</label></dt>
       <dd>
         <% Term.all.order(name: :asc).each do |term| %>
-          <%= check_box_tag "lesson[term_ids][]", term.id, f.object.terms.include?(term) %>
-          <%= term.name %>
+          <label><%= check_box_tag "lesson[term_ids][]", term.id, f.object.terms.include?(term) %>
+          <%= term.name %></label>
         <% end %>
       </dd>
   </dl>

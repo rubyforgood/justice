@@ -241,11 +241,17 @@ article {
         width: 75px; }
       article#lesson dl dd, article#calendaritem dl dd {
         margin-bottom: 5px; }
-        article#lesson dl dd input, article#lesson dl dd select, article#calendaritem dl dd input, article#calendaritem dl dd select {
+        article#lesson dl dd input[type='text'], article#lesson dl dd select, article#calendaritem dl dd input, article#calendaritem dl dd select {
           width: 300px;
           font-size: 14px;
           padding: 2px;
           margin-bottom: 20px; }
+        article#lesson dl dd label {
+          white-space: nowrap;
+          display: inline;
+          font-weight: 400;
+          margin-right: 15px;
+        }
     article#lesson label, article#calendaritem label {
       font-weight: 500;
       display: block;
