@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Justice for Juniors</title>
+    <meta name="description" content="">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="container">
+      <%= render 'shared/header' %>
+      <div class="clear"></div>
+
+
+  <p class="image-lockup-xlarge">
+  <img src="assets/placeholder-4.png">
+</p>
+<article>
+<aside>
+<!-- Optional sidebar for content; remove aside block to hide -->
+<% if cms_block_content(:image1_caption).present? %>
+  <p class="image-lockup-small">
+    <img src="<%= cms_block_content(:image1_url) %>">
+    <span class="caption">
+      <%= cms_block_content(:image1_caption) %>
+    </span>
+  </p>
+  <p>Et voluptatem facere non animi explicabo voluptas.
+  </p>
+  <p><a href="#">Action link is here</a></p>
+<% end %>
+
+<% if cms_block_content(:image2_caption).present? %>
+  <p class="image-lockup-small">
+    <img src="<%= cms_block_content(:image2_url) %>">
+    <span class="caption">
+      <%= cms_block_content(:image2_caption) %>
+    </span>
+  </p>
+  <p>Et voluptatem facere non animi explicabo voluptas.
+  </p>
+  <p><a href="#">Action link is here</a></p>
+<% end %>
+
+</aside>
+<!-- End optional sidebar for content -->
+<h1><%=  @cms_page.label %></h1>
+  <%= yield %>
+</article>
+
+  <%= render 'shared/footer' %>
+    </div>
+  </body>
+</html>
