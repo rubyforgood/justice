@@ -37,14 +37,10 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
-    respond_to do |format|
-      if @lesson.save
-        format.html { redirect_to [:admin, @lesson], notice: 'Lesson was successfully created.' }
-        format.json { render :show, status: :created, location: @lesson }
-      else
-        format.html { render :new }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
-      end
+    if @lesson.save
+      redirect_to [:admin, @lesson], notice: 'Lesson was successfully created.'
+    else
+      render :new
     end
   end
 
@@ -52,14 +48,11 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   # PATCH/PUT /lessons/1.json
   def update
     if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
-      respond_to do |format|
-        if @lesson.update(lesson_params)
-          format.html { redirect_to [:admin, @lesson], notice: 'Lesson was successfully updated.' }
-          format.json { render :show, status: :ok, location: @lesson }
-        else
-          format.html { render :edit }
-          format.json { render json: @lesson.errors, status: :unprocessable_entity }
-        end
+      @lesson.links = params[:lesson][:links].gsub(/\s+/, "").split(',')
+      if @lesson.update(lesson_params)
+        redirect_to [:admin, @lesson], notice: 'Lesson was successfully updated.'
+      else
+        render :edit
       end
     else
       render :show, notice: 'Only admins or lesson creator can edit this lesson.'
@@ -71,10 +64,7 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   def destroy
     if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
       @lesson.destroy
-      respond_to do |format|
-        format.html { redirect_to admin_lessons_url, notice: 'Lesson was successfully destroyed.' }
-        format.json { head :no_content }
-      end
+      redirect_to admin_lessons_url, notice: 'Lesson was successfully destroyed.'
     else
       render :show, notice: 'Only admins or lesson creator can edit this lesson.'
     end
@@ -96,6 +86,6 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def lesson_params
-    params.require(:lesson).permit(:byline, :lesson_type, :user_id, :title, :body, :questions, :document, term_ids: [], links: [])
+    params.require(:lesson).permit(:lesson_type, :user_id, :title, :body, :questions, :document, {term_ids: []}, {links: []})
   end
 end

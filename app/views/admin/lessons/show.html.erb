@@ -1,50 +1,42 @@
-<p id="notice"><%= notice %></p>
+<article id="lesson">
+  <aside>
+    <button>Add to Calendar</button>
+    <button>Print</button>
+  </aside>
 
-<p>
-  <strong>Byline:</strong>
-  <%= @lesson.byline %>
-</p>
+  <dl id="meta-top">
+    <dt>By</dt>
+      <dd><%= @lesson.user.full_name %></dd>
+    <dt>Date</dt>
+      <dd><%= @lesson.updated_at.strftime("%B %-d, %Y") %></dd>
+    <dt>Type</dt>
+      <dd><%= @lesson.lesson_type %></dd>
+    <dt>Terms</dt>
+      <dd><%= @lesson.terms.map(&:name).join(", ") %></dd>
+  </dl>
+  <br/><br/>
 
-<p>
-  <strong>Lesson type:</strong>
-  <%= @lesson.lesson_type %>
-</p>
+  <p><%= @lesson.body %></p>
 
-<p>
-  <strong>Terms:</strong>
-  <%= @lesson.terms %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @lesson.user_id %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @lesson.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @lesson.body %>
-</p>
-
-<p>
-  <strong>Links:</strong>
-  <%= @lesson.links %>
-</p>
-
-<p>
-  <strong>Questions:</strong>
-  <%= @lesson.questions %>
-</p>
-
-<p>
-  <%= link_to 'Download', admin_download_lesson_path(@lesson), disable_with: 'Downloading...' %>
-</p>
-
-<% if (@lesson.user == current_user) || current_user.admin? || current_user.super_user? %>
-<%= link_to 'Edit', edit_admin_lesson_path(@lesson) %> |
-<% end %>
-<%= link_to 'Back', admin_lessons_path %>
+  <dl id="meta-bot">
+    <dt>Links</dt>
+      <dd>
+        <ul>
+          <% @lesson.links.each do |link| %>
+            <li><%= link_to link %></li>
+          <% end %>
+        </ul>
+      </dd>
+    <dt>Questions</dt>
+      <dd>
+        <%= @lesson.questions %>
+      </dd>
+    <% if @lesson.document.exists? %>
+      <dt><%= link_to 'Download', download_admin_lesson_path(@lesson), disable_with: 'Downloading...' %></dt>
+    <% end %>
+  </dl>
+  <aside>
+    <%= link_to '<button>Edit</button>'.html_safe, edit_admin_lesson_path(@lesson) %>
+    <%= link_to '<button>Back</button>'.html_safe, admin_lessons_path %>
+  </aside>
+</article>

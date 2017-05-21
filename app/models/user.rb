@@ -7,4 +7,14 @@ class User < ApplicationRecord
   # NO PROBABLY trackable,
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :lessons
+
+  def full_name
+    if first_name && last_name
+      first_name + " " + last_name
+    else
+      "Unknown Name for User ID: #{id}"
+    end
+  end
 end

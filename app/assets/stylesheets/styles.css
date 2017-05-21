@@ -185,6 +185,37 @@ article {
   border: 2px solid white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   padding: 5px 20px; }
+  article#lesson, article#calendaritem {
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 40px 0;
+    padding: none; }
+    article#lesson #back-to-cal, article#calendaritem #back-to-cal {
+      margin: 0 0 20px 0; }
+    article#lesson aside, article#calendaritem aside {
+      float: none;
+      text-align: right;
+      margin-bottom: 10px; }
+    article#lesson dl, article#calendaritem dl {
+      margin: 0;
+      padding: 0; }
+      article#lesson dl dt, article#calendaritem dl dt {
+        font-weight: 500;
+        float: left;
+        clear: left;
+        width: 75px; }
+      article#lesson dl dd, article#calendaritem dl dd {
+        margin-bottom: 5px; }
+    article#lesson dl#meta-bot dt, article#calendaritem dl#meta-bot dt {
+      float: none;
+      width: auto; }
+    article#lesson dl#meta-bot dd, article#calendaritem dl#meta-bot dd {
+      margin-bottom: 20px; }
+    article#lesson dl#meta-bot ul, article#calendaritem dl#meta-bot ul {
+      margin: 0;
+      padding: 0; }
   article h1 {
     margin: 20px 0 40px; }
   article#lesson, article#calendaritem, article#calendar-edit {

@@ -7,6 +7,7 @@ class Lesson < ApplicationRecord
   ARTICLE = 'Article-based'
   LESSON_TYPES = [ACTIVITY, ARTICLE].freeze
 
+  belongs_to :user
   has_many :lesson_terms
   has_many :terms, through: :lesson_terms
   has_attached_file :document
