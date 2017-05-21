@@ -34,7 +34,7 @@ header {
 		height: 75px;
 		text-indent: -99999px;
 		overflow: hidden;
-		background: no-repeat url(../images/jfj-logo.png);
+		background: no-repeat image-url('jfj-logo.png');
 		background-size: 206px 75px;
 		margin-top: 15px;
 	}
@@ -62,15 +62,15 @@ header {
 			}
 
 			#social-youtube {
-				background: no-repeat url(../images/youtube.png);
+				background: no-repeat image-url('youtube.png');
 				background-size: 18px 18px;
 			}
 			#social-twitter {
-				background: no-repeat url(../images/twitter.png);
+				background: no-repeat image-url('twitter.png');
 				background-size: 18px 18px;
 			}
 			#social-facebook {
-				background: no-repeat url(../images/facebook.png);
+				background: no-repeat image-url('facebook.png');
 				background-size: 18px 18px;
 			}
 		}
@@ -94,23 +94,63 @@ header {
 				margin: 0;
 				text-indent: -99999px;
 				overflow: hidden;
-				background: #4990E2 no-repeat url(../images/search-icon.png) 50% 50%;
+				background: #4990E2 no-repeat image-url('search-icon.png') 50% 50%;
 				background-size: 18px 18px;
 				float: right;
 			}
 		}
 		nav {
 			margin: 15px 0 0 0;
-			a {
-				color: #4A4A4A;
-				text-decoration: none;
-				margin-left: 45px;
-				letter-spacing: 1px;
 
-				&:hover {
-					text-decoration: underline;
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					position: relative;
+					display: inline-block;
+					margin-left: 45px;
+					a {
+						color: #4A4A4A;
+						text-decoration: none;
+						letter-spacing: 1px;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+
+					ul {
+						display: none;
+						position: absolute;
+						top: 100%;
+						border: 4px solid white;
+						right: -14px;
+						background: #F1F1F1;
+						z-index: 2;
+						width: 150px;
+						padding: 0 10px;
+						box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+
+						li {
+							a {
+								display: block;
+								padding: 6px 0;
+							}
+						}
+					}
+
+					&:hover {
+
+					}
+
+					&:hover ul {
+						display: block;
+					}
 				}
 			}
+
 		}
 	}
 }
