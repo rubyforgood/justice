@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   comfy_route :cms_admin, path: '/admin'
 
   namespace :admin do
+    resources :calendar_items
     resources :lessons do
       member do
         get :download
