@@ -10,13 +10,11 @@ Rails.application.routes.draw do
         get :download
       end
     end
+    resources :users
     resources :terms
   end
 
-  resources :users
   devise_for :users
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Make sure this routeset is defined last
   comfy_route :cms, path: '/', sitemap: false
