@@ -187,39 +187,39 @@ article {
   padding: 5px 20px; }
   article h1 {
     margin: 20px 0 40px; }
-  article#lesson, article#calendaritem {
+  article#lesson, article#calendaritem, article#calendar-edit {
     position: static;
     background: none;
     border: none;
     box-shadow: none;
     margin: 40px 0;
     padding: none; }
-    article#lesson #back-to-cal, article#calendaritem #back-to-cal {
+    article#lesson #back-to-cal, article#calendaritem #back-to-cal, article#calendar-edit #back-to-cal {
       margin: 0 0 20px 0; }
-    article#lesson aside, article#calendaritem aside {
+    article#lesson aside, article#calendaritem aside, article#calendar-edit aside {
       float: none;
       text-align: right;
       margin-bottom: 10px; }
-    article#lesson dl, article#calendaritem dl {
+    article#lesson dl, article#calendaritem dl, article#calendar-edit dl {
       margin: 0;
       padding: 0; }
-      article#lesson dl dt, article#calendaritem dl dt {
+      article#lesson dl dt, article#calendaritem dl dt, article#calendar-edit dl dt {
         font-weight: 500;
         float: left;
         clear: left;
         width: 75px; }
-      article#lesson dl dd, article#calendaritem dl dd {
+      article#lesson dl dd, article#calendaritem dl dd, article#calendar-edit dl dd {
         margin-bottom: 5px; }
-        article#lesson dl dd input, article#lesson dl dd select, article#calendaritem dl dd input, article#calendaritem dl dd select {
+        article#lesson dl dd input, article#lesson dl dd select, article#calendaritem dl dd input, article#calendaritem dl dd select, article#calendar-edit dl dd input, article#calendar-edit dl dd select {
           width: 300px;
           font-size: 14px;
           padding: 2px;
           margin-bottom: 20px; }
-    article#lesson label, article#calendaritem label {
+    article#lesson label, article#calendaritem label, article#calendar-edit label {
       font-weight: 500;
       display: block;
       margin-bottom: 5px; }
-    article#lesson textarea, article#calendaritem textarea {
+    article#lesson textarea, article#calendaritem textarea, article#calendar-edit textarea {
       display: block;
       width: 600px;
       min-height: 250px;
@@ -227,7 +227,7 @@ article {
       line-height: 20px;
       padding: 6px;
       margin-bottom: 40px; }
-    article#lesson input[type="submit"], article#calendaritem input[type="submit"] {
+    article#lesson input[type="submit"], article#calendaritem input[type="submit"], article#calendar-edit input[type="submit"] {
       width: auto;
       background: #4990E2;
       color: white;
@@ -236,14 +236,14 @@ article {
       border: 1px solid #2868B3;
       padding: 6px 12px;
       cursor: pointer; }
-      article#lesson input[type="submit"]:hover, article#calendaritem input[type="submit"]:hover {
+      article#lesson input[type="submit"]:hover, article#calendaritem input[type="submit"]:hover, article#calendar-edit input[type="submit"]:hover {
         opacity: 0.8; }
-    article#lesson dl#meta-bot dt, article#calendaritem dl#meta-bot dt {
+    article#lesson dl#meta-bot dt, article#calendaritem dl#meta-bot dt, article#calendar-edit dl#meta-bot dt {
       float: none;
       width: auto; }
-    article#lesson dl#meta-bot dd, article#calendaritem dl#meta-bot dd {
+    article#lesson dl#meta-bot dd, article#calendaritem dl#meta-bot dd, article#calendar-edit dl#meta-bot dd {
       margin-bottom: 20px; }
-    article#lesson dl#meta-bot ul, article#calendaritem dl#meta-bot ul {
+    article#lesson dl#meta-bot ul, article#calendaritem dl#meta-bot ul, article#calendar-edit dl#meta-bot ul {
       margin: 0;
       padding: 0; }
   article h1 {
@@ -255,6 +255,12 @@ article {
     article aside .image-lockup-small {
       border-color: #E1E1E1;
       margin-bottom: 12px; }
+  article#calendar-edit dl dt {
+    width: 100px; }
+  article#calendar-edit textarea {
+    width: 350px;
+    min-height: 100px;
+    border: 1px solid #BFBFBF; }
 
 #lesson-listing {
   margin: 40px 0 0; }

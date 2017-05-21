@@ -254,7 +254,7 @@ article {
 		margin: 20px 0 40px;
 	}
 
-	&#lesson,&#calendaritem {
+	&#lesson,&#calendaritem,&#calendar-edit {
 		position: static;
 		background: none;
 		border: none;
@@ -355,6 +355,17 @@ article {
 		.image-lockup-small {
 			border-color: #E1E1E1;
 			margin-bottom: 12px;
+		}
+	}
+
+	&#calendar-edit {
+		dl dt {
+			width: 100px;
+		}
+		textarea {
+			width: 350px;
+			min-height: 100px;
+			border: 1px solid #BFBFBF;
 		}
 	}
 }
