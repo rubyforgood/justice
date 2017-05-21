@@ -1,16 +1,18 @@
 <nav>
   <ul>
-  <% Comfy::Cms::Site.first.pages.root.children.published.each do |page| %>
-    <li>
-    <%= link_to page.label, page.url(:relative) %>
-      <% if page.children.any? %>
-        <ul>
-          <% page.children.each do |children| %>
-            <li><%= link_to children.label, children.url(:relative) %></li>
-          <% end %>
-        </ul>
-      <% end %>
-    </li>
+  <% if Comfy::Cms::Site.first&.pages&.root %>
+    <% Comfy::Cms::Site.first.pages.root.children.published.each do |page| %>
+      <li>
+      <%= link_to page.label, page.url(:relative) %>
+        <% if page.children.any? %>
+          <ul>
+            <% page.children.each do |children| %>
+              <li><%= link_to children.label, children.url(:relative) %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </li>
+    <% end %>
   <% end %>
   </ul>
 
