@@ -1,6 +1,9 @@
-<h1>Editing Term</h1>
-
-<%= render 'form', term: @term %>
-
-<%= link_to 'Show', [:admin, @term] %> |
-<%= link_to 'Back', admin_terms_path %>
+<article id="lesson">
+  <h1>Edit Term</h1>
+  <%= render 'form', term: @term %>
+</article>
+</br>
+<aside>
+  <%= link_to "<button>Show</button>".html_safe, admin_term_path(@term) %>
+  <%= link_to "<button>Back</button>".html_safe, admin_terms_path %>
+</aside>

@@ -51,24 +51,32 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   # PATCH/PUT /lessons/1
   # PATCH/PUT /lessons/1.json
   def update
-    respond_to do |format|
-      if @lesson.update(lesson_params)
-        format.html { redirect_to [:admin, @lesson], notice: 'Lesson was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lesson }
-      else
-        format.html { render :edit }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
+    if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
+      respond_to do |format|
+        if @lesson.update(lesson_params)
+          format.html { redirect_to [:admin, @lesson], notice: 'Lesson was successfully updated.' }
+          format.json { render :show, status: :ok, location: @lesson }
+        else
+          format.html { render :edit }
+          format.json { render json: @lesson.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      render :show, notice: 'Only admins or lesson creator can edit this lesson.'
     end
   end
 
   # DELETE /lessons/1
   # DELETE /lessons/1.json
   def destroy
-    @lesson.destroy
-    respond_to do |format|
-      format.html { redirect_to lessons_url, notice: 'Lesson was successfully destroyed.' }
-      format.json { head :no_content }
+    if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
+      @lesson.destroy
+      respond_to do |format|
+        format.html { redirect_to admin_lessons_url, notice: 'Lesson was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      render :show, notice: 'Only admins or lesson creator can edit this lesson.'
     end
   end
 

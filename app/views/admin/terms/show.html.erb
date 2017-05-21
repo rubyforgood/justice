@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<article id="lesson">
+  <dl id="meta-top">
+    <dt>Name</dt>
+      <dd><%= @term.name %></dd>
+</article>
 
-<p>
-  <strong>Name:</strong>
-  <%= @term.name %>
-</p>
-
-<%= link_to 'Edit', edit_admin_term_path(@term) %> |
-<%= link_to 'Back', admin_terms_path %>
+<aside>
+  <% if current_user.admin? || current_user.super_user? %>
+    <%= link_to "<button>Edit</button>".html_safe, edit_admin_term_path(@term) %>
+  <% end %>
+  <%= link_to "<button>Back</button>".html_safe, admin_terms_path %>
+</aside>
