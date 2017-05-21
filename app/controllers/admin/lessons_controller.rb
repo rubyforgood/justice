@@ -48,6 +48,7 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   # PATCH/PUT /lessons/1.json
   def update
     if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
+      @lesson.links = params[:lesson][:links].gsub(/\s+/, "").split(',')
       if @lesson.update(lesson_params)
         redirect_to [:admin, @lesson], notice: 'Lesson was successfully updated.'
       else
@@ -81,11 +82,6 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   # Use callbacks to share common setup or constraints between actions.
   def set_lesson
     @lesson = Lesson.find(params[:id])
-  end
-
-  def make_links_array(links)
-    return unless links
-    links.split(", ")
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

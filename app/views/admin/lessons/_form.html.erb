@@ -22,7 +22,10 @@
       </dd>
     <dt><label for="lesson-terms">Terms</label></dt>
       <dd>
-        <%= f.select :term_ids, options_from_collection_for_select(Term.all.order(name: :asc), "id", "name", lesson.terms.map(&:name)), {}, {multiple: true} %>
+        <% Term.all.order(name: :asc).each do |term| %>
+          <%= check_box_tag "lesson[term_ids][]", term.id, f.object.terms.include?(term) %>
+          <%= term.name %>
+        <% end %>
       </dd>
   </dl>
   <label for="lesson-body">Body</label>

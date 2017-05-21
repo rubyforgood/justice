@@ -14,6 +14,7 @@
     <dt>Terms</dt>
       <dd><%= @lesson.terms.map(&:name).join(", ") %></dd>
   </dl>
+  <br/><br/>
 
   <p><%= @lesson.body %></p>
 
@@ -21,8 +22,8 @@
     <dt>Links</dt>
       <dd>
         <ul>
-          <% @lesson.links do |link| %>
-            <li><%= link_to link, link %></li>
+          <% @lesson.links.each do |link| %>
+            <li><%= link_to link %></li>
           <% end %>
         </ul>
       </dd>
