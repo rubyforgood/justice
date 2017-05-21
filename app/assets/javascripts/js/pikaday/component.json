@@ -1,0 +1,19 @@
+{
+  "name": "pikaday-time",
+  "repo": "owenmead/Pikaday",
+  "description": "Time support added to pikaday",
+  "version": "1.5.1",
+  "keywords": [
+    "datepicker",
+    "calendar",
+    "date",
+    "time",
+    "datetime"
+  ],
+  "main": "pikaday.js",
+  "scripts": ["pikaday.js"],
+  "styles":  ["css/pikaday.css"],
+  "dependencies": {},
+  "demo": "http://dbushell.github.io/Pikaday/",
+  "license": "MIT"
+}
