@@ -1,17 +1,14 @@
-<ul>
-  <li>Title</li>
-  <dd><%= @calendar_item.title %></dd>
+<article id="calendaritem">
+  <dl id="meta-top">
+    <dt>Title</dt>
+      <dd><%= @calendar_item.title %></dd>
+    <dt>Date</dt>
+      <dd><%= @calendar_item.start_time %></dd>
+      <dt>Body</dt>
+      <p><%= @calendar_item.body %></p>
+  </dl>
 
-  <li>Body</li>
-  <dd><%= @calendar_item.body %></dd>
+  <%= button_to("Edit Event", edit_admin_calendar_item_url(@calendar_item), method: :get, class: "btn btn-primary") %>
 
-  <li>Start Date</li>
-  <dd><%= @calendar_item.start_time %></dd>
-
-  <li>End Date</li>
-  <dd><%= @calendar_item.end_time %></dd>
-</ul>
-
-<%= button_to("Edit Event", edit_admin_calendar_item_url(@calendar_item), method: :get) %>
-
-<%= button_to("Delete Event", admin_calendar_item_path(@calendar_item), method: :delete) %>
+  <%= button_to("Delete Event", admin_calendar_item_path(@calendar_item), method: :delete, class: "btn btn-primary") %>
+</article>
