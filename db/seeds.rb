@@ -1,4 +1,7 @@
 # frozen_string_literal: true
+Term.destroy_all
+Lesson.destroy_all
+User.destroy_all
 
 10.times do |n|
   User.create(
@@ -28,4 +31,3 @@ end
     lesson.lesson_terms.create(term: Term.order('RANDOM()').take)
   end
 end
-
