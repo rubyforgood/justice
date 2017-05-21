@@ -64,7 +64,7 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   def destroy
     if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
       @lesson.destroy
-      redirect_to lessons_url, notice: 'Lesson was successfully destroyed.'
+      redirect_to admin_lessons_url, notice: 'Lesson was successfully destroyed.'
     else
       render :show, notice: 'Only admins or lesson creator can edit this lesson.'
     end
