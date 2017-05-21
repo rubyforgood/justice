@@ -1,6 +1,19 @@
+.rspec
 log/
 tmp/
+coverage/
+spec/tmp/
+
+# Ignore pow environment settings
 .powenv
 .powder
+
 public/system/comfy
+
+# TODO Comment out this rule if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+
+## Environment normalization:
+.bundle
+vendor/bundle/
 spec/examples.txt
