@@ -18,14 +18,14 @@
 
 
   <p class="image-lockup-xlarge">
-  <img src="assets/placeholder-4.png">
+  <%= image_tag("placeholder-4.png") %>
 </p>
 <article>
 <aside>
 <!-- Optional sidebar for content; remove aside block to hide -->
 <% if cms_block_content(:image1_caption).present? %>
   <p class="image-lockup-small">
-    <img src="<%= cms_block_content(:image1_url) %>">
+    <%= image_tag(cms_block_content(:image1_url)) %>
     <span class="caption">
       <%= cms_block_content(:image1_caption) %>
     </span>
@@ -37,7 +37,7 @@
 
 <% if cms_block_content(:image2_caption).present? %>
   <p class="image-lockup-small">
-    <img src="<%= cms_block_content(:image2_url) %>">
+    <%= image_tag(cms_block_content(:image2_url)) %>
     <span class="caption">
       <%= cms_block_content(:image2_caption) %>
     </span>
