@@ -57,6 +57,6 @@ protected
   end
 
   def user_params
-    params.fetch(:user, {}).permit()
+    params.fetch(:user, {}).permit(:name, :email, :status)
   end
 end

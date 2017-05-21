@@ -12,15 +12,15 @@ gem 'rails', '~> 5.0.3'
 gem 'comfortable_mexican_sofa', '~> 1.12.10'
 gem 'devise'
 gem 'jquery-rails'
-gem "paperclip", "~> 5.1.0"
-gem "paperclip_database", "~> 2.0"
+gem 'paperclip', '~> 5.1.0'
+gem 'paperclip_database', '~> 2.0'
 gem 'pg', '~> 0.18'
 gem 'pg_search'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
