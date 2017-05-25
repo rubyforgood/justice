@@ -8,5 +8,6 @@ FactoryGirl.define do
     body  Faker::Hipster.paragraph
     questions Faker::Hipster.sentence
     user { FactoryGirl.create :user }
+    links { [Faker::Internet.url, Faker::Internet.url] }
   end
 end
