@@ -14,9 +14,8 @@ RSpec.describe Admin::TermsController, type: :controller do
   let(:valid_session) { {} }
 
   context 'regular user can see' do
-    before(:each) do
-      user = FactoryGirl.create(:user)
-      allow(controller).to receive(:current_user).and_return(user)
+    before do
+      sign_in volunteer
     end
 
     describe 'GET #index' do
@@ -44,9 +43,8 @@ RSpec.describe Admin::TermsController, type: :controller do
   end
 
   context 'requires admin' do
-    before(:each) do
-      user = FactoryGirl.create(:user, :admin)
-      allow(controller).to receive(:current_user).and_return(user)
+    before do
+      sign_in admin
     end
     describe 'GET #edit' do
       it 'returns a success response' do
