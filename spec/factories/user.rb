@@ -14,5 +14,10 @@ FactoryGirl.define do
     trait :super_user do
       super_user true
     end
+
+    trait :volunteer do
+      admin false
+      super_user false
+    end
   end
 end

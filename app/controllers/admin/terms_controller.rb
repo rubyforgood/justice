@@ -39,7 +39,7 @@ class Admin::TermsController < Comfy::Admin::Cms::BaseController
   def update
     if current_user.admin? || current_user.super_user?
       if @term.update(term_params)
-        redirect_to @term, notice: 'Term was successfully updated.'
+        redirect_to [:admin, @term], notice: 'Term was successfully updated.'
       else
         render :edit, notice: "Term could not be updated due to the following error(s): " +
                              "#{@term.errors.full_messages.join(". ")}"
@@ -52,7 +52,7 @@ class Admin::TermsController < Comfy::Admin::Cms::BaseController
   # DELETE /terms/1
   def destroy
     @term.destroy
-    redirect_to terms_url, notice: 'Term was successfully destroyed.'
+    redirect_to admin_terms_url, notice: 'Term was successfully destroyed.'
   end
 
   private
