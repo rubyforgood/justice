@@ -45,6 +45,9 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   # PATCH/PUT /lessons/1
   def update
     if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
+      if params[:document_delete] == "1"
+        @lesson.document = nil
+      end
       @lesson.links = params[:lesson][:links].gsub(/\s+/, "").split(',')
       if @lesson.update(lesson_params)
         redirect_to [:admin, @lesson], notice: 'Lesson was successfully updated.'
