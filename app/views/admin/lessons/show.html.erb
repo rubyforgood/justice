@@ -1,12 +1,11 @@
 <article id="lesson">
-  <aside>
+<!--   <aside>
     <button>Add to Calendar</button>
-    <button>Print</button>
-  </aside>
+  </aside> -->
 
   <dl id="meta-top">
     <dt>By</dt>
-      <dd><%= @lesson.user.full_name %></dd>
+      <dd><%= @lesson.user_name %></dd>
     <dt>Date</dt>
       <dd><%= @lesson.updated_at.strftime("%B %-d, %Y") %></dd>
     <dt>Type</dt>
@@ -23,7 +22,7 @@
       <dd>
         <ul>
           <% @lesson.links.each do |link| %>
-            <li><%= link_to link %></li>
+            <li><a href="<%= link %>"><%= link %></a></li>
           <% end %>
         </ul>
       </dd>
