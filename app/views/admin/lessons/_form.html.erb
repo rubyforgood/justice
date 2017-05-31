@@ -31,7 +31,7 @@
   <label for="lesson-body">Body</label>
   <%= f.text_area :body %>
   <br/>
-  <label for="lesson-links">Links <em>(One URL per line)</em></label>
+  <label for="lesson-links">Links <em>(Separate links with commas)</em></label>
   <%= f.text_area :links, value: lesson.links.join(", ") %>
   <br/>
   <label for="lesson-questions">Questions</label>

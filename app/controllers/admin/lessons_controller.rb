@@ -22,7 +22,6 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   end
 
   # GET /lessons/1
-  # GET /lessons/1.json
   def show; end
 
   # GET /lessons/new
@@ -34,7 +33,6 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   def edit; end
 
   # POST /lessons
-  # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
@@ -45,7 +43,6 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   end
 
   # PATCH/PUT /lessons/1
-  # PATCH/PUT /lessons/1.json
   def update
     if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
       @lesson.links = params[:lesson][:links].gsub(/\s+/, "").split(',')
@@ -60,7 +57,6 @@ class Admin::LessonsController < Comfy::Admin::Cms::BaseController
   end
 
   # DELETE /lessons/1
-  # DELETE /lessons/1.json
   def destroy
     if (@lesson.user == current_user) || current_user.admin? || current_user.super_user?
       @lesson.destroy
