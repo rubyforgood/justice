@@ -26,4 +26,8 @@ class Lesson < ApplicationRecord
   validates_attachment_file_name :document, matches: [/pdf\z/, /docx?\z/]
 
   pg_search_scope :search_by_title, against: :title
+
+  def user_name
+    user ? user.full_name : 'N/A'
+  end
 end
