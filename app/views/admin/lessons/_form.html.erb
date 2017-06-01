@@ -37,9 +37,16 @@
   <label for="lesson-questions">Questions</label>
   <%= f.text_area :questions %>
   <br/>
-  <label for="lesson-document">Document</label>
-  <%= f.file_field :document %>
-  <br/>
+  <% if @lesson.document.exists? %>
+    <label for="lesson-document">Delete Document?</label>
+    <%= check_box_tag :document_delete %>
+    <br/>
+    <br/>
+  <% else %>
+    <label for="lesson-document">Document</label>
+    <%= f.file_field :document %>
+    <br/>
+  <% end %>
   <% if form_type == "new" %>
     <%= f.hidden_field :user_id, value: current_user.id %>
   <% end %>
