@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
   comfy_route :cms_admin, path: '/admin'
 
   namespace :admin do
@@ -14,7 +13,7 @@ Rails.application.routes.draw do
     resources :users
     resources :terms
   end
-  
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -22,4 +21,3 @@ Rails.application.routes.draw do
   # Make sure this routeset is defined last
   comfy_route :cms, path: '/', sitemap: false
 end
-

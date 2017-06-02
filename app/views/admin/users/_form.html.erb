@@ -1,7 +1,12 @@
 <%= form_for([:admin, user]) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
+<<<<<<< HEAD
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+=======
+      <p><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</p>
+
+>>>>>>> Resolve merge conflict
       <ul>
       <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
