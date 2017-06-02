@@ -1,0 +1,435 @@
+esbody {
+  margin: 0;
+  padding: 0 0 40px 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px; }
+
+a {
+  color: #3E79BE; }
+
+.clear {
+  clear: both;
+  height: 0;
+  font-size: 0px; }
+
+#container {
+  width: 983px;
+  margin: 0 auto; }
+
+.social {
+  list-style-type: none;
+  margin: 0 0 5px 0;
+  padding: 0;
+  text-align: right; }
+  .social li {
+    display: inline-block; }
+    .social li a {
+      display: inline-block;
+      height: 18px;
+      width: 18px;
+      text-indent: 99999px;
+      overflow: hidden;
+      margin-left: 18px; }
+  .social .social-youtube {
+    background: no-repeat url(../images/youtube.png);
+    background-size: 18px 18px; }
+  .social .social-twitter {
+    background: no-repeat url(../images/twitter.png);
+    background-size: 18px 18px; }
+  .social .social-facebook {
+    background: no-repeat url(../images/facebook.png);
+    background-size: 18px 18px; }
+
+header {
+  margin: 18px 0 25px 0; }
+  header #logo {
+    float: left;
+    display: block;
+    width: 206px;
+    height: 75px;
+    text-indent: -99999px;
+    overflow: hidden;
+    background: no-repeat url(../images/jfj-logo.png);
+    background-size: 206px 75px;
+    margin-top: 15px; }
+  header #nav-block {
+    float: right; }
+    header #nav-block #search-box {
+      margin: 0;
+      text-align: right; }
+      header #nav-block #search-box #search-box-field {
+        width: 285px;
+        border: 1px solid #C2C2C2;
+        border-right: none;
+        font-size: 12px;
+        line-height: 24px;
+        padding: 0 10px;
+        margin: 0; }
+      header #nav-block #search-box #search-box-submit {
+        width: 35px;
+        line-height: 24px;
+        border: 1px solid #2868B3;
+        padding: 0;
+        margin: 0;
+        text-indent: -99999px;
+        overflow: hidden;
+        background: #4990E2 no-repeat url(../images/search-icon.png) 50% 50%;
+        background-size: 18px 18px;
+        float: right; }
+    header #nav-block nav {
+      margin: 15px 0 0 0; }
+      header #nav-block nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0; }
+        header #nav-block nav ul li {
+          position: relative;
+          display: inline-block;
+          margin-left: 45px; }
+          header #nav-block nav ul li a {
+            color: #4A4A4A;
+            text-decoration: none;
+            letter-spacing: 1px; }
+            header #nav-block nav ul li a:hover {
+              text-decoration: underline; }
+          header #nav-block nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            border: 4px solid white;
+            right: -14px;
+            background: #F1F1F1;
+            z-index: 2;
+            width: 150px;
+            padding: 0 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); }
+            header #nav-block nav ul li ul li a {
+              display: block;
+              padding: 6px 0; }
+          header #nav-block nav ul li:hover ul {
+            display: block; }
+
+#home-content {
+  margin: 30px -4px 0 -4px; }
+  #home-content .image-lockup-large {
+    float: left; }
+  #home-content .image-lockup-small {
+    float: right;
+    margin-bottom: 12px; }
+  #home-content #home-content-textarea {
+    background: #f1f1f1;
+    padding: 10px 30px; }
+
+.image-lockup-xlarge {
+  margin: 30px -4px 0 -4px;
+  position: relative;
+  width: 983px;
+  height: 371px;
+  border: 4px solid #F1F1F1;
+  overflow: hidden; }
+  .image-lockup-xlarge .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 490px;
+    padding: 10px 20px;
+    color: white; }
+    .image-lockup-xlarge .caption a {
+      font-weight: bold;
+      color: white; }
+
+.image-lockup-large {
+  position: relative;
+  width: 640px;
+  height: 488px;
+  border: 4px solid #F1F1F1;
+  overflow: hidden; }
+  .image-lockup-large .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 490px;
+    padding: 10px 20px;
+    color: white; }
+    .image-lockup-large .caption a {
+      font-weight: bold;
+      color: white; }
+
+.image-lockup-small {
+  position: relative;
+  width: 320px;
+  height: 234px;
+  border: 4px solid #F1F1F1;
+  overflow: hidden; }
+  .image-lockup-small .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 251px;
+    padding: 10px 20px;
+    color: white; }
+    .image-lockup-small .caption a {
+      font-weight: bold;
+      color: white; }
+
+article {
+  width: 900px;
+  position: relative;
+  top: -45px;
+  margin: 0 auto;
+  background: #F1F1F1;
+  border: 2px solid white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  padding: 5px 20px; }
+  article#lesson, article#calendaritem {
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 40px 0;
+    padding: none; }
+    article#lesson #back-to-cal, article#calendaritem #back-to-cal {
+      margin: 0 0 20px 0; }
+    article#lesson aside, article#calendaritem aside {
+      float: none;
+      text-align: right;
+      margin-bottom: 10px; }
+    article#lesson dl, article#calendaritem dl {
+      margin: 0;
+      padding: 0; }
+      article#lesson dl dt, article#calendaritem dl dt {
+        font-weight: 500;
+        float: left;
+        clear: left;
+        width: 75px; }
+      article#lesson dl dd, article#calendaritem dl dd {
+        margin-bottom: 5px; }
+    article#lesson dl#meta-bot dt, article#calendaritem dl#meta-bot dt {
+      float: none;
+      width: auto; }
+    article#lesson dl#meta-bot dd, article#calendaritem dl#meta-bot dd {
+      margin-bottom: 20px; }
+    article#lesson dl#meta-bot ul, article#calendaritem dl#meta-bot ul {
+      margin: 0;
+      padding: 0; }
+  article h1 {
+    margin: 20px 0 40px; }
+  article#lesson, article#calendaritem, article#calendar-edit {
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 40px 0;
+    padding: none; }
+    article#lesson #back-to-cal, article#calendaritem #back-to-cal, article#calendar-edit #back-to-cal {
+      margin: 0 0 20px 0; }
+    article#lesson aside, article#calendaritem aside, article#calendar-edit aside {
+      float: none;
+      text-align: right;
+      margin-bottom: 10px; }
+    article#lesson dl, article#calendaritem dl, article#calendar-edit dl {
+      margin: 0;
+      padding: 0; }
+      article#lesson dl dt, article#calendaritem dl dt, article#calendar-edit dl dt {
+        font-weight: 500;
+        float: left;
+        clear: left;
+        width: 75px; }
+      article#lesson dl dd, article#calendaritem dl dd, article#calendar-edit dl dd {
+        margin-bottom: 5px; }
+        article#lesson dl dd input, article#lesson dl dd select, article#calendaritem dl dd input, article#calendaritem dl dd select, article#calendar-edit dl dd input, article#calendar-edit dl dd select {
+          width: 300px;
+          font-size: 14px;
+          padding: 2px;
+          margin-bottom: 20px; }
+    article#lesson label, article#calendaritem label, article#calendar-edit label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px; }
+    article#lesson textarea, article#calendaritem textarea, article#calendar-edit textarea {
+      display: block;
+      width: 600px;
+      min-height: 250px;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 6px;
+      margin-bottom: 40px; }
+    article#lesson input[type="submit"], article#calendaritem input[type="submit"], article#calendar-edit input[type="submit"] {
+      width: auto;
+      background: #4990E2;
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid #2868B3;
+      padding: 6px 12px;
+      cursor: pointer; }
+      article#lesson input[type="submit"]:hover, article#calendaritem input[type="submit"]:hover, article#calendar-edit input[type="submit"]:hover {
+        opacity: 0.8; }
+    article#lesson dl#meta-bot dt, article#calendaritem dl#meta-bot dt, article#calendar-edit dl#meta-bot dt {
+      float: none;
+      width: auto; }
+    article#lesson dl#meta-bot dd, article#calendaritem dl#meta-bot dd, article#calendar-edit dl#meta-bot dd {
+      margin-bottom: 20px; }
+    article#lesson dl#meta-bot ul, article#calendaritem dl#meta-bot ul, article#calendar-edit dl#meta-bot ul {
+      margin: 0;
+      padding: 0; }
+  article h1 {
+    font-size: 20px;
+    font-weight: 500; }
+  article aside {
+    float: right;
+    margin: 20px 0 10px 40px; }
+    article aside .image-lockup-small {
+      border-color: #E1E1E1;
+      margin-bottom: 12px; }
+  article#calendar-edit dl dt {
+    width: 100px; }
+  article#calendar-edit textarea {
+    width: 350px;
+    min-height: 100px;
+    border: 1px solid #BFBFBF; }
+
+#lesson-listing {
+  margin: 40px 0 0; }
+  #lesson-listing button {
+    margin: 0 0 10px 20px; }
+  #lesson-listing #lesson-listing-filter {
+    border: 4px solid #F1F1F1;
+    padding: 0 20px 15px; }
+    #lesson-listing #lesson-listing-filter h2 {
+      font-size: 14px;
+      font-weight: 500; }
+    #lesson-listing #lesson-listing-filter ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      #lesson-listing #lesson-listing-filter ul li {
+        display: inline-block; }
+        #lesson-listing #lesson-listing-filter ul li h3 {
+          font-size: 12px;
+          font-weight: 500;
+          margin: 0;
+          color: #9B9B9B; }
+        #lesson-listing #lesson-listing-filter ul li input, #lesson-listing #lesson-listing-filter ul li select {
+          padding: 6px;
+          width: 220px;
+          margin: 0 20px 0 0; }
+        #lesson-listing #lesson-listing-filter ul li input[type='submit'] {
+          width: auto;
+          background: #4990E2;
+          color: white;
+          font-size: 12px;
+          font-weight: 500;
+          border: 1px solid #2868B3;
+          padding: 6px 12px;
+          cursor: pointer; }
+          #lesson-listing #lesson-listing-filter ul li input[type='submit']:hover {
+            opacity: 0.8; }
+  #lesson-listing #lesson-listing-table {
+    border: none;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 10px auto 20px;
+    line-height: 16px; }
+    #lesson-listing #lesson-listing-table th {
+      background: #E5F1FF;
+      text-align: left;
+      font-weight: 500; }
+    #lesson-listing #lesson-listing-table th, #lesson-listing #lesson-listing-table td {
+      border-right: 1px solid #f1f1f1;
+      padding: 10px 20px; }
+      #lesson-listing #lesson-listing-table th:last-child, #lesson-listing #lesson-listing-table td:last-child {
+        border-right: none; }
+    #lesson-listing #lesson-listing-table td {
+      vertical-align: top; }
+    #lesson-listing #lesson-listing-table #lesson-name {
+      width: 300px; }
+
+#calendar {
+  margin: 40px 0; }
+  #calendar #calendar-controls {
+    position: relative;
+    top: 20px; }
+  #calendar #calendar-nav {
+    float: right; }
+  #calendar #calendar-month {
+    margin: 0;
+    border: none;
+    border-collapse: collapse; }
+    #calendar #calendar-month caption {
+      font-size: 20px;
+      font-weight: 500px;
+      margin: 0 0 20px; }
+    #calendar #calendar-month th {
+      background: #4990E2;
+      color: white;
+      border: 4px solid #fff;
+      font-size: 13px; }
+    #calendar #calendar-month td {
+      width: 140px;
+      height: 140px;
+      border: 4px solid #fff;
+      background: #f1f1f1;
+      position: relative; }
+      #calendar #calendar-month td.disabled-date {
+        opacity: 0.4; }
+      #calendar #calendar-month td dl {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+        #calendar #calendar-month td dl dt {
+          font-size: 18px;
+          font-weight: 300;
+          position: absolute;
+          margin: 0;
+          padding: 10px; }
+        #calendar #calendar-month td dl dd {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: 0;
+          padding: 10px;
+          font-size: 11px;
+          line-height: 13px;
+          max-height: 95px;
+          overflow: hidden; }
+          #calendar #calendar-month td dl dd ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0; }
+            #calendar #calendar-month td dl dd ul li {
+              margin: 10px 0 0;
+              padding: 0; }
+              #calendar #calendar-month td dl dd ul li a {
+                text-decoration: none; }
+                #calendar #calendar-month td dl dd ul li a:hover {
+                  text-decoration: underline; }
+
+footer {
+  margin: 60px 100px;
+  padding: 25px;
+  font-size: 12px;
+  border-top: 1px solid #f1f1f1;
+  text-align: center; }
+  footer .social {
+    text-align: center;
+    margin: 20px; }
+  footer a {
+    text-decoration: none;
+    margin: 0 20px; }
+    footer a:hover {
+      text-decoration: underline; }
+  footer p {
+    color: #999; }
+
+/*# sourceMappingURL=styles.css.map */

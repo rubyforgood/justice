@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -9,6 +11,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :lessons
+  STATUSES = %w[Blocked Active].freeze
+  validates_presence_of :name, :status, :email
+  validates_inclusion_of :status, in: STATUSES, message: " must be either Blocked or Active"
 
   def full_name
     if first_name && last_name
