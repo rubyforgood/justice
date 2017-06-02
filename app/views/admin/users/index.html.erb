@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<<<<<<< HEAD
+<%-# TODO: Change to a button that would email selected users -%>
+<%= link_to 'Send Mail', admin_users_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3">Name</th>
+      <th colspan="3">Email</th>
+      <th colspan="3">Status</th>
+      <th colspan="3">Created</th>
+=======
+<%= link_to 'New User', new_admin_user_path %>
+<%-# Change to a button that would email selected users -%>
+<%= link_to 'Send Mail', admin_users_path %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Created</th>
+>>>>>>> Resolve merge conflict
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+<<<<<<< HEAD
+=======
+        <td><%= user.name %></td>
+>>>>>>> Resolve merge conflict
+        <td><%= user.email %></td>
+        <td><%= user.status %></td>
+        <td><%= user.created_at.strftime("%b %d %Y") %></td>
+        <td><%= link_to 'Show', [:admin, user] %> | </td>
+        <td><%= link_to 'Edit', edit_admin_user_path(user) %> | </td>
+<<<<<<< HEAD
+        <td><%= link_to 'Show', [:admin, user] %></td>
+        <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+=======
+>>>>>>> Resolve merge conflict
+        <td><%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<<<<<<< HEAD
+<%= link_to 'New User', new_admin_user_path %>
+=======
+
+
+>>>>>>> Resolve merge conflict
