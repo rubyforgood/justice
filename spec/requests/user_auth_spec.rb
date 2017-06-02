@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User auth', type: :request do
+
   describe 'signing in' do
     let(:params) { { user: { email: volunteer.email, password: volunteer.password } } }
     let(:log_in) { post user_session_path, params: params }
