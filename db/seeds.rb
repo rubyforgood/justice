@@ -10,22 +10,13 @@ User.destroy_all
     email: "person#{n}@#{Faker::Internet.domain_name}",
     password: "password",
     password_confirmation: "password",
-    sign_in_count: 1
+    sign_in_count: 1,
+    status: %w[Active Blocked].sample
   )
 end
 
 10.times do
   Term.create(name: Faker::Hipster.word)
-end
-
-10.times do
-  User.create(
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password: 'password',
-    password_confirmation: 'password',
-    status: %w[Active Blocked].sample
-  )
 end
 
 20.times do
@@ -37,9 +28,7 @@ end
     # randomly assigns user to lesson
     user_id: User.order('RANDOM()').first.id
   )
-
   3.times do
     lesson.lesson_terms.create(term: Term.order('RANDOM()').take)
   end
-end
 end
