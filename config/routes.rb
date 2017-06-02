@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     resources :users
     resources :terms
   end
-  resources :calendar_items
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
