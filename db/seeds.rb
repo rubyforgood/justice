@@ -9,7 +9,8 @@ end
     email: Faker::Internet.email,
     password: 'password',
     password_confirmation: 'password',
-    status: %w[Active Blocked].sample
+    suspended: false,
+    approved: true
   )
 end
 

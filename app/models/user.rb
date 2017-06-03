@@ -11,9 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :lessons
-  STATUSES = %w[Blocked Active].freeze
-  validates_presence_of :first_name, :last_name, :status, :email
-  validates_inclusion_of :status, in: STATUSES, message: " must be either Blocked or Active"
+  validates_presence_of :first_name, :last_name, :email
 
   def full_name
     if first_name && last_name
