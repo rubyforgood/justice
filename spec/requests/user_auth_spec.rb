@@ -24,7 +24,7 @@ RSpec.describe 'User auth', type: :request do
 
   describe 'signing up' do
     let(:email) { 'new@user.com' }
-    let(:params) { { user: { email: email, password: '123456', password_confirmation: '123456' } } }
+    let(:params) { { user: { first_name: 'first', last_name: 'last', email: email, password: '123456', password_confirmation: '123456' } } }
     let(:sign_up) { post user_registration_path, params: params  }
 
     it 'creates a new user' do

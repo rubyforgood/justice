@@ -4,7 +4,8 @@ end
 
 10.times do
   User.create(
-    name: Faker::Name.name,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: 'password',
     password_confirmation: 'password',
@@ -25,5 +26,4 @@ end
   3.times do
     lesson.lesson_terms.create(term: Term.order('RANDOM()').take)
   end
-end
 end

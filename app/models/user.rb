@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   has_many :lessons
   STATUSES = %w[Blocked Active].freeze
-  validates_presence_of :name, :status, :email
+  validates_presence_of :first_name, :last_name, :status, :email
   validates_inclusion_of :status, in: STATUSES, message: " must be either Blocked or Active"
 
   def full_name
