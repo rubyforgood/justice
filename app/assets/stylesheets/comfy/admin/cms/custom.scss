@@ -450,6 +450,45 @@ article {
   }
 }
 
+article#user {
+  position: static;
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 40px 0;
+
+  dl {
+    margin: 0;
+    padding: 0;
+
+    dt {
+      font-weight: 500;
+      float: left;
+      clear: left;
+      width: 80px;
+    }
+
+    dd {
+      margin-bottom: 5px;
+
+      input[type='text'] {
+        width: 300px;
+        font-size: 14px;
+        padding: 2px;
+        margin-bottom: 20px;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        width: 300px;
+        font-size: 14px;
+        padding: 2px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
 footer {
   margin: 60px 100px;
   padding: 25px;

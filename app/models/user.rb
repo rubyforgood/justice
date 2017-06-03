@@ -29,4 +29,14 @@ class User < ApplicationRecord
     approved? ? super : :not_approved
   end
 
+  def status
+    if suspended
+      :suspended
+    elsif approved
+      :active
+    else
+      :pending_approval
+    end
+  end
+
 end

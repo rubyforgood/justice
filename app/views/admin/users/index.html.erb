@@ -25,7 +25,7 @@
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
           <td><%= user.email %></td>
-          <td><%= user.status %></td>
+          <td><%= user.status.to_s.humanize %></td>
           <td><%= user.created_at.strftime("%b %d %Y") %></td>
           <td><%= link_to 'Show', [:admin, user] %></td>
           <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
