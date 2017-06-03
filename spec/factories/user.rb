@@ -6,21 +6,20 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
     sign_in_count 1
+    suspended false
+    approved true
 
     trait :admin do
       admin true
-      approved true
     end
 
     trait :super_user do
       super_user true
-      approved true
     end
 
     trait :volunteer do
       admin false
       super_user false
-      approved true
     end
   end
 end

@@ -179,6 +179,7 @@ ActiveRecord::Schema.define(version: 20170602024748) do
     t.boolean  "admin",                  default: false
     t.boolean  "super_user",             default: false
     t.string   "last_name"
+    t.boolean  "suspended",              default: false, null: false
     t.boolean  "approved",               default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

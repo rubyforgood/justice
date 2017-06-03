@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -9,6 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :lessons
+  validates_presence_of :first_name, :last_name, :email
 
   def full_name
     if first_name && last_name
@@ -24,6 +27,16 @@ class User < ApplicationRecord
 
   def inactive_message
     approved? ? super : :not_approved
+  end
+
+  def status
+    if suspended
+      :suspended
+    elsif approved
+      :active
+    else
+      :pending_approval
+    end
   end
 
 end

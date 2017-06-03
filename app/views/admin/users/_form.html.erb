@@ -1,0 +1,42 @@
+<%= form_for([:admin, user]) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <p><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</p>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <dl id="meta-top">
+    <dt><%= f.label :first_name %></dt>
+    <dd><%= f.text_field :first_name %></dd>
+
+    <dt><%= f.label :last_name %></dt>
+    <dd><%= f.text_field :last_name %></dd>
+
+    <dt><%= f.label :email %></dt>
+    <dd><%= f.text_field :email %></dd>
+
+    <dt><%= f.label :password %></dt>
+    <dd><%= f.text_field :password %></dd>
+
+    <dt><%= f.label "Confirm password" %></dt>
+    <dd><%= f.text_field :password_confirmation %></dd>
+
+
+
+    <dt><%= f.label :approved %></dt>
+    <dd><%= f.check_box :approved %></dd>
+
+    <dt><%= f.label :suspended %></dt>
+    <dd><%= f.check_box :suspended %></dd>
+  </dl>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
