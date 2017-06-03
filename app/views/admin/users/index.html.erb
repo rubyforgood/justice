@@ -1,34 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div id="user-listing">
+  <h1>Users</h1>
 
-<h1>Users</h1>
+  <%= link_to 'New User', new_admin_user_path %>
+  <%-# TODO: Change to a button that would email selected users -%>
+  <%= link_to 'Send Mail', admin_users_path %>
 
-<%= link_to 'New User', new_admin_user_path %>
-<%-# TODO: Change to a button that would email selected users -%>
-<%= link_to 'Send Mail', admin_users_path %>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3">Name</th>
-      <th colspan="3">Email</th>
-      <th colspan="3">Status</th>
-      <th colspan="3">Created</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+  <table cols="8" id="user-listing-table">
+    <thead>
       <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.status %></td>
-        <td><%= user.created_at.strftime("%b %d %Y") %></td>
-        <td><%= link_to 'Show', [:admin, user] %> | </td>
-        <td><%= link_to 'Edit', edit_admin_user_path(user) %> | </td>
-        <td><%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Created at</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.status %></td>
+          <td><%= user.created_at.strftime("%b %d %Y") %></td>
+          <td><%= link_to 'Show', [:admin, user] %></td>
+          <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+          <td><%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
