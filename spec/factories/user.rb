@@ -6,6 +6,7 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
     sign_in_count 1
+    status 'Active'
 
     trait :admin do
       admin true
