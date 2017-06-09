@@ -40,6 +40,8 @@ class Admin::CalendarItemsController < Comfy::Admin::Cms::BaseController
 
   private
   def calendar_item_params
+    start_time = params[:calendar_item][:start_time]
+    params[:calendar_item][:start_time] = ActiveSupport::TimeZone[Time.zone.name].parse(start_time) if start_time.present?
     params.require(:calendar_item).permit(:title, :body, :start_time, :end_time)
   end
 

@@ -23,6 +23,7 @@ gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier', '>= 1.3.0'
 gem "simple_calendar", "~> 2.0"
+gem 'american_date'
 
 group :development, :test do
   gem 'database_cleaner'
