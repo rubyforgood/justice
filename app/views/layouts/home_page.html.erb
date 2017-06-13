@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Justice for Juniors</title>
-    <meta name="description" content="">
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Justice for Juniors</title>
+  <meta name="description" content="">
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <div id="container">
-      <%= render 'shared/header' %>
+<body>
+  <div id="container">
+    <%= render 'shared/header' %>
+
+    <div id="home-content">
+      <div id="promo-block"></div>
+
+      <div class="image-lockup-large">
+        <% if cms_block_content(:hero_image).present? %>
+          <a href="<%= cms_block_content(:hero_image_link) %>">
+            <%= image_tag(cms_block_content(:hero_image).file.url) %>
+            <span class="caption">
+              <p><%= cms_block_content(:hero_image_caption)%></p>
+            </span>
+          </a>
+          <% end %>
+      </div>
+
+      <div class="image-lockup-small">
+        <% if cms_block_content(:side_image_1).present? %>
+          <a href="<%= cms_block_content(:side_image_1_link) %>">
+            <%= image_tag(cms_block_content(:side_image_1).file.url) %>
+            <span class="caption">
+              <p><%=cms_block_content(:side_image_1_caption)%></p>
+            </span>
+          </a>
+        <% end %>
+      </div>
+
+      <div class="image-lockup-small">
+       <% if cms_block_content(:side_image_2).present? %>
+          <a href="<%= cms_block_content(:side_image_2_link) %>">
+            <%= image_tag(cms_block_content(:side_image_2).file.url) %>
+            <span class="caption">
+              <p><%=cms_block_content(:side_image_2_caption)%></p>
+            </span>
+          </a>
+        <% end %>
+      </div>
       <div class="clear"></div>
-      <%= yield %>
-      <%= render 'shared/footer' %>
+
+      <div id="home-content-textarea">
+        <%= yield %>
+      </div>
     </div>
-  </body>
+
+    <%= render 'shared/footer' %>
+  </div>
+</body>
 </html>
