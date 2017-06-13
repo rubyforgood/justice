@@ -16,5 +16,6 @@ module Justice
 
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = :local
+    config.sass.load_paths << Rails.root.join('vendor','assets','stylesheets')
   end
 end
