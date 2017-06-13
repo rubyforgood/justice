@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Justice for Juniors</title>
-    <meta name="description" content="">
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Justice for Juniors</title>
+  <meta name="description" content="">
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <div id="container">
-      <%= render 'shared/header' %>
-      <div class="clear"></div>
+<body>
+  <div id="container">
+    <%= render 'shared/header' %>
 
+    <p class="image-lockup-xlarge">
+      <% if cms_block_content(:hero_image).present? %>
+        <%= image_tag(cms_block_content(:hero_image).file.url) %>
+      <% end %>
+    </p>
 
-  <p class="image-lockup-xlarge">
-  <%= image_tag("placeholder-4.png") %>
-</p>
-<article>
-<aside>
-<!-- Optional sidebar for content; remove aside block to hide -->
-<% if cms_block_content(:image1_caption).present? %>
-  <p class="image-lockup-small">
-    <%= image_tag(cms_block_content(:image1_url)) %>
-    <span class="caption">
-      <%= cms_block_content(:image1_caption) %>
-    </span>
-  </p>
-  <p>Et voluptatem facere non animi explicabo voluptas.
-  </p>
-  <p><a href="#">Action link is here</a></p>
-<% end %>
+    <article>
+      <aside>
+        <!-- Optional sidebar for content; remove aside block to hide -->
+        <% if cms_block_content(:image_1).present? %>
+          <p class="image-lockup-small">
+            <a href="<%= cms_block_content(:image_1_link) %>">
+              <%= image_tag(cms_block_content(:image_1).file.url) %>
+              <span class="caption">
+                <%= cms_block_content(:image_1_caption) %>
+              </span>
+            </a>
+          </p>
+        <% end %>
 
-<% if cms_block_content(:image2_caption).present? %>
-  <p class="image-lockup-small">
-    <%= image_tag(cms_block_content(:image2_url)) %>
-    <span class="caption">
-      <%= cms_block_content(:image2_caption) %>
-    </span>
-  </p>
-  <p>Et voluptatem facere non animi explicabo voluptas.
-  </p>
-  <p><a href="#">Action link is here</a></p>
-<% end %>
+        <% if cms_block_content(:image_2).present? %>
+          <p class="image-lockup-small">
+            <a href="<%= cms_block_content(:image_2_link) %>">
+              <%= image_tag(cms_block_content(:image_2).file.url) %>
+              <span class="caption">
+                <%= cms_block_content(:image_2_caption) %>
+              </span>
+            </a>
+          </p>
+        <% end %>
 
-</aside>
-<!-- End optional sidebar for content -->
-<h1><%=  @cms_page.label %></h1>
-  <%= yield %>
-</article>
+      </aside>
+      <!-- End optional sidebar for content -->
 
-  <%= render 'shared/footer' %>
-    </div>
-  </body>
+      <h1><%=  @cms_page.label %></h1>
+      <%= yield %>
+    </article>
+
+    <%= render 'shared/footer' %>
+  </div>
+</body>
 </html>
