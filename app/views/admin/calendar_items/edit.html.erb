@@ -1,16 +1,35 @@
+<script>
+  var noon = new Date();
+  noon.setHours(12);
+  noon.setMinutes(0);
+  noon.setSeconds(0);
+  window.onload = function(){
+    var picker = new Pikaday({
+      field: document.getElementById('datepicker'),
+      format: 'MM/DD/YYYY hh:mm a',
+      incrementMinuteBy: 15,
+      defaultDate: noon,
+      onSelect: function() {
+       console.log(this.getMoment().format('Do MMMM YYYY'));
+      }
+    });
+  }
+</script>
 <article id="calendar-edit">
    <h1>Edit Event</h1>
    <dl id="meta-top">
 
      <%= form_for([:admin, @calendar_item]) do |f| %>
+     <div class="form-group">
            <dt><%= f.label :title %></dt>
-           <dd><%= f.text_field :title %></dd>
+           <dd><%= f.text_field :title, class: "form-control" %></dd>
 
             <dt><%= f.label :body %></dt>
-            <dd><%= f.text_area :body %></dd>
+            <dd><%= f.text_area :body, class: "form-control" %></dd>
 
            <dt><%= f.label :start_time %></dt>
-           <dd id="lesson-date" name ="lesson-date"><%= f.text_field :start_time %></dd>
+     </div>
+           <dd id="lesson-date" name ="lesson-date"><%= f.text_field :start_time, id: "datepicker", class: "form-control", type: "datetime"%></dd>
        <%= f.submit "Update Calendar", class: " btn btn-primary", style: "margin-top: 10px" %>
      <% end %>
  </article>
