@@ -15,8 +15,8 @@
     });
   }
 </script>
-
 <%= form_for [:admin, @calendar_item] do |f| %>
+<form>
 <div class="form-group">
   <ul>
     <li>
@@ -34,7 +34,9 @@
       <%= f.text_field :start_time, id: 'datepicker',class: "form-control", type: "datetime" %>
     </li>
   </ul>
-</div>
+
 
   <%= f.submit "Create Calendar", class: "btn btn-primary" %>
 <% end %>
+</div>
+</form>
