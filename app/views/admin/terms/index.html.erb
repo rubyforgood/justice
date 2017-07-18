@@ -1,8 +1,6 @@
 <div id="lesson-listing">
   <% if current_user.admin? || current_user.super_user? %>
-    <%= button_to new_admin_term_path do %>
-      <strong>+</strong> New Term
-    <% end %>
+    <%= link_to '<button><strong>+</strong> New Term</button>'.html_safe, new_admin_term_path %>
   <% end %>
 
   <table cols="4" id="lesson-listing-table">
