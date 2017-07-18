@@ -15,24 +15,28 @@
     });
   }
 </script>
-
 <%= form_for [:admin, @calendar_item] do |f| %>
+<form>
+<div class="form-group">
   <ul>
     <li>
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: "form-control" %>
     </li>
 
     <li>
       <%= f.label :body %>
-      <%= f.text_area :body %>
+      <%= f.text_area :body, class: "form-control" %>
     </li>
 
     <li>
       <%= f.label :start_time %>
-      <%= f.text_field :start_time, id: 'datepicker' %>
+      <%= f.text_field :start_time, id: 'datepicker',class: "form-control", type: "datetime" %>
     </li>
   </ul>
 
+
   <%= f.submit "Create Calendar", class: "btn btn-primary" %>
 <% end %>
+</div>
+</form>
