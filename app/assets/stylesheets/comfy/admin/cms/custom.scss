@@ -185,88 +185,96 @@ article {
   margin: 0 auto;
   background: #F1F1F1;
   border: 2px solid white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  padding: 5px 20px; }
-  article#lesson, article#calendaritem {
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+  padding: 5px 20px;
+
+  h1 {
+    margin: 20px 0 40px;
+  }
+
+  &#lesson {
+    dl dd label {
+      white-space: nowrap;
+      display: inline;
+      font-weight: 400;
+      margin-right: 15px;
+    }
+  }
+
+  &#calendaritem,&#calendar-edit {
+    dl dd label {
+      white-space: nowrap;
+      display: inline;
+      font-weight: 400;
+      margin-right: 15px;
+    }
+  }
+
+  &#lesson,&#calendaritem,&#calendar-edit {
     position: static;
     background: none;
     border: none;
     box-shadow: none;
     margin: 40px 0;
-    padding: none; }
-    article#lesson #back-to-cal, article#calendaritem #back-to-cal {
-      margin: 0 0 20px 0; }
-    article#lesson aside, article#calendaritem aside {
+    padding: none;
+
+    #back-to-cal {
+      margin: 0 0 20px 0;
+    }
+
+    aside {
       float: none;
       text-align: right;
-      margin-bottom: 10px; }
-    article#lesson dl, article#calendaritem dl {
+      margin-bottom: 10px;
+    }
+
+    dl {
       margin: 0;
-      padding: 0; }
-      article#lesson dl dt, article#calendaritem dl dt {
+      padding: 0;
+
+      dt {
         font-weight: 500;
         float: left;
         clear: left;
-        width: 75px; }
-      article#lesson dl dd, article#calendaritem dl dd {
-        margin-bottom: 5px; }
-    article#lesson dl#meta-bot dt, article#calendaritem dl#meta-bot dt {
-      float: none;
-      width: auto; }
-    article#lesson dl#meta-bot dd, article#calendaritem dl#meta-bot dd {
-      margin-bottom: 20px; }
-    article#lesson dl#meta-bot ul, article#calendaritem dl#meta-bot ul {
-      margin: 0;
-      padding: 0; }
-  article h1 {
-    margin: 20px 0 40px; }
-  article#lesson, article#calendaritem {
-    position: static;
-    background: none;
-    border: none;
-    box-shadow: none;
-    margin: 40px 0;
-    padding: none; }
-    article#lesson #back-to-cal, article#calendaritem #back-to-cal {
-      margin: 0 0 20px 0; }
-    article#lesson aside, article#calendaritem aside {
-      float: none;
-      text-align: right;
-      margin-bottom: 10px; }
-    article#lesson dl, article#calendaritem dl {
-      margin: 0;
-      padding: 0; }
-      article#lesson dl dt, article#calendaritem dl dt {
-        font-weight: 500;
-        float: left;
-        clear: left;
-        width: 75px; }
-      article#lesson dl dd, article#calendaritem dl dd {
-        margin-bottom: 5px; }
-        article#lesson dl dd input[type='text'], article#lesson dl dd select, article#calendaritem dl dd input, article#calendaritem dl dd select {
-          width: 300px;
-          font-size: 14px;
-          padding: 2px;
-          margin-bottom: 20px; }
-        article#lesson dl dd label {
+        width: 75px;
+      }
+
+      dd {
+        margin-bottom: 5px;
+
+        label {
           white-space: nowrap;
           display: inline;
           font-weight: 400;
           margin-right: 15px;
         }
-    article#lesson label, article#calendaritem label {
+
+        input[type='text'],select {
+          width: 300px;
+          font-size: 14px;
+          padding: 2px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    label {
       font-weight: 500;
       display: block;
-      margin-bottom: 5px; }
-    article#lesson textarea, article#calendaritem textarea {
+      margin-bottom: 5px;
+    }
+
+    textarea {
       display: block;
       width: 600px;
       min-height: 250px;
       font-size: 14px;
       line-height: 20px;
       padding: 6px;
-      margin-bottom: 40px; }
-    article#lesson input[type="submit"], article#calendaritem input[type="submit"] {
+      margin-bottom: 40px;
+    }
+
+    input[type="submit"] {
       width: auto;
       background: #4990E2;
       color: white;
@@ -274,26 +282,56 @@ article {
       font-weight: 500;
       border: 1px solid #2868B3;
       padding: 6px 12px;
-      cursor: pointer; }
-      article#lesson input[type="submit"]:hover, article#calendaritem input[type="submit"]:hover {
-        opacity: 0.8; }
-    article#lesson dl#meta-bot dt, article#calendaritem dl#meta-bot dt {
-      float: none;
-      width: auto; }
-    article#lesson dl#meta-bot dd, article#calendaritem dl#meta-bot dd {
-      margin-bottom: 20px; }
-    article#lesson dl#meta-bot ul, article#calendaritem dl#meta-bot ul {
-      margin: 0;
-      padding: 0; }
-  article h1 {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    dl#meta-bot {
+      dt {
+        float: none;
+        width: auto;
+      }
+
+      dd {
+        margin-bottom: 20px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  h1 {
     font-size: 20px;
-    font-weight: 500; }
-  article aside {
+    font-weight: 500;
+  }
+
+  aside {
     float: right;
-    margin: 20px 0 10px 40px; }
-    article aside .image-lockup-small {
+    margin: 20px 0 10px 40px;
+
+    .image-lockup-small {
       border-color: #E1E1E1;
-      margin-bottom: 12px; }
+      margin-bottom: 12px;
+    }
+  }
+
+  &#calendar-edit {
+    dl dt {
+      width: 100px;
+    }
+    textarea {
+      width: 300px;
+      min-height: 100px;
+      border: 1px solid #BFBFBF;
+    }
+  }
+}
 
 #lesson-listing {
   margin: 40px 0 0; }
