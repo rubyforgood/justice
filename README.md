@@ -28,8 +28,6 @@ git rebase upstream/master
 * Rails 5.0.3
 * Postgres => 9.1
 
-***
-
 ## Setup Instructions
 
     $ bundle install
