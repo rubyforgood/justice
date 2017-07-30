@@ -7,7 +7,7 @@ Justice for Juniors, sponsored by the Luther Rice Chapel, is dedicated to addres
 Fork this repo
 Clone your repo
 ```bash
-git clone git clone git@github.com/yourusername/justice.git
+git clone git@github.com/yourusername/justice.git
 ```
 
 Make sure you set the upstream
@@ -25,9 +25,11 @@ git rebase upstream/master
 ## Setup Instructions
 
     $ bundle install
+    $ rake db:create
+    $ rails generate comfy:cms *See below for one more step before running the next step!
     $ rake db:migrate
-    $ rails generate comfy:cms
-    $ rake db:migrate
+
+* Comfy cms version 1.12.10 incorrectly rewrites your `routes.rb` file https://github.com/comfy/comfortable-mexican-sofa/issues/760 - so you need to manually clean it up. Remove the duplicate routes for `:cms_admin` and for `:cms`. Also make sure `comfy_route :cms, path: '/', sitemap: false` is last.
 
 ## Using the CMS
     * Go to justice.dev/admin
