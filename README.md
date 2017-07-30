@@ -22,9 +22,16 @@ git rebase upstream/master
 
 ***
 
+## You will Need
+
+* Ruby 2.4.1
+* Rails 5.0.3
+* Postgres => 9.1
+
 ## Setup Instructions
 
     $ bundle install
+    $ rake db:create
     $ rake db:migrate
     $ rails generate comfy:cms
     $ rake db:migrate
