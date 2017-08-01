@@ -25,16 +25,29 @@ git rebase upstream/master
 ## Setup Instructions
 
     $ bundle install
-    $ rake db:create
-    $ rails generate comfy:cms *See below for one more step before running the next step!
-    $ rake db:migrate
+    $ rake db:setup
 
-* Comfy cms version 1.12.10 incorrectly rewrites your `routes.rb` file https://github.com/comfy/comfortable-mexican-sofa/issues/760 - so you need to manually clean it up. Remove the duplicate routes for `:cms_admin` and for `:cms`. Also make sure `comfy_route :cms, path: '/', sitemap: false` is last.
+### Local Pow Host
+
+http://justice.dev/
+```bash
+  $ gem install powder
+  $ powder link
+  $ powder open
+```
+#### You an also use puma:
+```bash
+  $ bundle exec rails s
+```
 
 ## Using the CMS
     * Go to justice.dev/admin
-    * Default credentials: 'username'/'password'
+    * Default credentials: 'admin@admin.com'/'password'
 
+## Running the tests:
+```bash
+  $ bundle exec rspec
+```
 ## Our Workflow: (open source style)
 
 ( Make sure your upstream branch is set to track ruby for good’s fork of the project, not your own )
@@ -46,16 +59,13 @@ git rebase upstream/master
   * if you aren’t ready to merge it but you want comments, append your commit with “WIP:”
 * Push your commit to your forked version of your repo
 * Make a pull request on github
-* Put your commit onto this channel for other folks to review
-(Review other folks’s code, too!)
-* Tell Emily/Rafa that you need your code merged in
+* PR will be reviewed and merged
 * Celebrate
 
 
 ## Point of Contacts
 
-* [Person]() - Product Owner
 * [Rafa](https://github.com/osondoar) - Developer
 * [Emily Bosakowski](https://github.com/almightyboz) - Developer
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/rubyforgood/justice/graphs/contributors) who participated in this project.

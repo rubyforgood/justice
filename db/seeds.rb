@@ -50,6 +50,16 @@ ActiveRecord::Base.transaction do
   end
 
   if User.count == 0
+    # Admin user
+    User.create(
+      first_name: 'Justice',
+      last_name: 'For Juniors',
+      email: 'admin@admin.com',
+      password: 'password',
+      password_confirmation: 'password',
+      suspended: false,
+      approved: true
+    )
     10.times do
       User.create(
         first_name: Faker::Name.first_name,
