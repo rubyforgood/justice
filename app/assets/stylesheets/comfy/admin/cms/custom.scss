@@ -179,9 +179,8 @@ header {
       color: white; }
 
 article {
-  width: 900px;
   position: relative;
-  top: -45px;
+  top: -20px;
   margin: 0 auto;
   background: #F1F1F1;
   border: 2px solid white;
@@ -648,6 +647,14 @@ footer {
 
 .center-column{
   margin-right: 0 !important;
+}
+
+#custom {
+  margin-left: -20px;
+}
+
+.form-control.custom {
+  width: 80%;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,38 @@
+<%= form_for([:admin, @calendar_item]) do |f| %>
+  <dl id= "meta-top">
+    <dd>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control custom" %>
+    </dd>
+
+    <dd>
+      <%= f.label :body %>
+      <%= f.text_area :body, class: "form-control custom" %>
+    </dd>
+
+    <dd>
+      <%= f.label :start_time %>
+      <%= f.text_field :start_time, class: "form-control custom", id: "datepicker", type: "datetime" %>
+    </dd>
+    <br>
+    <%= f.submit "Save Event", class: "btn btn-primary" %>
+  </dl>
+
+<% end %>
+<script>
+  var noon = new Date();
+  noon.setHours(12);
+  noon.setMinutes(0);
+  noon.setSeconds(0);
+  window.onload = function(){
+    var picker = new Pikaday({
+      field: document.getElementById('datepicker'),
+      format: 'MM/DD/YYYY hh:mm a',
+      incrementMinuteBy: 15,
+      defaultDate: noon,
+      onSelect: function() {
+        console.log(this.getMoment().format('Do MMMM YYYY'));
+      }
+    });
+  }
+</script>
